@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../SignUp/formInput.css";
 import FormInput from "../SignUp/FormInput";
+import {Link} from "react-router-dom"
 
 const SignUp = () => {
   const [values, setValues] = useState({
@@ -8,6 +9,10 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const isPasswordMatch = (password, confirmPassword) => {
+    return password === confirmPassword;
+  };
 
   const inputs = [
     {
@@ -37,17 +42,51 @@ const SignUp = () => {
       placeholder: "Confirm Password",
       errorMessage: "Passwords don't match!",
       label: "Confirm Password",
-      pattern: values.password,
       required: true,
     },
-  ];
+];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    
+
+    // Şifrelerin uyuşup uyuşmadığını kontrol edilen kısım
+    if (!isPasswordMatch(values.password, values.confirmPassword)) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Form verilerini hazırlama kısmı
+    const formData = {
+      email: values.email,
+      password: values.password,
+    };
+
+    // Verileri backend'e gönderme kısmı
+    sendDataToBackend(formData);
   };
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const sendDataToBackend = (data) => {
+    fetch("https://s-tekin.jotform.dev/intern-api/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        // PHP scriptinden gelen cevabı işleme kısmı
+        console.log(responseData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -62,8 +101,10 @@ const SignUp = () => {
             onChange={onChange}
           />
         ))}
-        <button>Submit</button>
-        <div className="sub">Already have an account?<button className="buttonOne">Login</button></div>
+        <button type="submit">Submit</button>
+        <div className="sub">
+          Already have an account?<Link to="/login">Login</Link>
+        </div>
       </form>
     </div>
   );

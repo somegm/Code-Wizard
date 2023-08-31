@@ -62,20 +62,6 @@ input:invalid[focused="true"] ~ span{
     text-align: center;
   }
   
-  button{
-      width: 100%;
-      height: 50px;
-      padding: 10px;
-      border: none;
-      background-color: orange;
-      color: white;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 15px;
-      margin-bottom: 30px;
-  }
   .buttonOne{
     background-color: rgba(0,0,0,0);
     border: none;
