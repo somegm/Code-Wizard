@@ -1,0 +1,47 @@
+
+.info-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .info-slogan{
+        width: 756px;
+        height: 236px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        
+
+        h3{
+            font-size: 48px;
+            color: #1E0582;
+        }
+
+        p{
+            font-size: 20px;
+            color: #3D0FF5;
+        }
+
+        .get-start{
+          
+           width: 136px;
+           height: 40px;
+            border: 1px solid #3D0FF5;
+            background-color: #3D0FF5;
+            color: #FFFFFF;
+            border-radius: 12px;
+            cursor: pointer;
+            
+        }
+    }
+
+    .info-img{
+        width: 600px;
+        height: 600px;
+        background-color: beige;
+        
+    }
+}
