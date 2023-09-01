@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./formInput.scss";
+import "../SignUp/formInput.css";
 import FormInput from "../SignUp/FormInput";
-import myAmblem from '../Navbar/amblem.svg' 
+import {Link} from "react-router-dom"
 
 const SignUp = () => {
   const [values, setValues] = useState({
@@ -10,12 +10,17 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-   const inputs = [
+  const isPasswordMatch = (password, confirmPassword) => {
+    return password === confirmPassword;
+  };
+
+  const inputs = [
     {
       id: 1,
       name: "email",
       type: "email",
       placeholder: "Email",
+      errorMessage: "It should be a valid email address!",
       label: "Email",
       required: true,
     },
@@ -24,6 +29,8 @@ const SignUp = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
@@ -33,31 +40,59 @@ const SignUp = () => {
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
+      errorMessage: "Passwords don't match!",
       label: "Confirm Password",
-      pattern: values.password,
       required: true,
     },
-  ]; 
-
-  
+];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    
+
+    // Şifrelerin uyuşup uyuşmadığını kontrol edilen kısım
+    if (!isPasswordMatch(values.password, values.confirmPassword)) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Form verilerini hazırlama kısmı
+    const formData = {
+      email: values.email,
+      password: values.password,
+    };
+
+    // Verileri backend'e gönderme kısmı
+    sendDataToBackend(formData);
   };
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
+  const sendDataToBackend = (data) => {
+    fetch("https://s-tekin.jotform.dev/intern-api/user/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((responseData) => {
+        // PHP scriptinden gelen cevabı işleme kısmı
+        console.log(responseData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   return (
-    
-    <div className="sign-contain">
     <div className="app">
       <form onSubmit={handleSubmit}>
-      <div className="head-sign">
-        <img src={myAmblem} alt='amblem'></img>
         <h1>SIGN UP</h1>
-      </div>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -66,11 +101,11 @@ const SignUp = () => {
             onChange={onChange}
           />
         ))}
-        <button>Submit</button>
-        <div className="sub">Already have an account?<a className="buttonOne">Login</a>
+        <button type="submit">Submit</button>
+        <div className="sub">
+          Already have an account?<Link to="/login">Login</Link>
         </div>
       </form>
-    </div>
     </div>
   );
 };
