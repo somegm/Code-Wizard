@@ -1,0 +1,120 @@
+.login-panel {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ABA0F8;
+  border-radius: 16px;
+}
+.login-panel .app {
+  max-width: 500px;
+  width: 100%;
+  /*  background-color: #ABA0F8; */
+  border-radius: 16px;
+  /*   border: 2px solid #4831D4; */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-panel .app .head-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-panel .app .head-login img {
+  max-width: 40px;
+  width: 100%;
+  max-height: 40px;
+  height: 100%;
+}
+.login-panel .app .head-login h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+.login-panel .app input {
+  height: 50px;
+  border-radius: 12px;
+  margin-top: 16px;
+  padding: 15px;
+  font-size: 18px;
+}
+.login-panel .app button {
+  height: 53px;
+  border-radius: 12px;
+  background-color: #4831D4;
+  color: #FFF;
+  margin-top: 16px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.login-panel .app .formInput {
+  display: flex;
+  flex-direction: column;
+}
+.login-panel .app .dont-have-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 20px;
+}
+.login-panel .app .dont-have-account a {
+  text-decoration: none;
+  color: #4831D4;
+  margin-left: 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.loginPanel {
+  width: 1000px;
+  height: 600px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+}
+
+.main-sign {
+  width: 500px;
+  height: 550px;
+  border-radius: 16px;
+  padding: 24px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 72px;
+}
+.main-sign h3 {
+  display: flex;
+  justify-content: center;
+}
+.main-sign input {
+  height: 50px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+.main-sign button {
+  height: 53px;
+  border-radius: 12px;
+  background-color: #FF8551;
+  color: #FFF;
+  margin-top: 16px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.main-sign .dont-have-account {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.main-sign .dont-have-account a {
+  color: #FF8551;
+  margin-left: 6px;
+}/*# sourceMappingURL=login.css.map */

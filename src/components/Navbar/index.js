@@ -1,15 +1,26 @@
 import React from 'react'
-import { NavbarContainer,Nav, NavText, NavH1, NavH2 } from './NavbarElements'
+ import "./navbar.scss"  
+ import myLogo from '../Navbar/codewizard logo.svg'
+ 
+
 
 const Navbar = () => {
   return (
-    <Nav>
-      <NavbarContainer>
-        <NavText>PETFINDER</NavText>
-        <NavH1>Sign Up</NavH1>
-        <NavH2> Log in </NavH2>
-      </NavbarContainer>
-    </Nav>
+   
+    <div className="navbar"> 
+    <div className="title">
+        <img src={myLogo} alt='logo'></img>
+        <h2>CodeWizard</h2>
+    </div>
+    <div className="input">
+     <ul>
+        <button>Sign Up</button>
+        <button>Login</button>   
+     </ul>
+    </div>
+    
+  </div>  
+
   )
 }
 

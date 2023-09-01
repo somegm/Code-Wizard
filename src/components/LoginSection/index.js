@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "../SignUp/formInput.css";
+import "./login.scss"
 import FormInput from "../SignUp/FormInput";
+import myAmblem from '../Navbar/amblem.svg' 
+
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -8,13 +10,12 @@ const Login = () => {
     password: "",
   });
 
-  const inputs = [
+   const inputs = [
     {
       id: 1,
       name: "email",
       type: "email",
       placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
       label: "Email",
       required: true,
     },
@@ -23,13 +24,13 @@ const Login = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage:
-        "You wrote wrong password",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
-  ];
+  ]; 
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,9 +41,13 @@ const Login = () => {
   };
 
   return (
-    <div className="app">
+     <div className="login-panel">
+     <div className="app">
       <form onSubmit={handleSubmit}>
-        <h1>LOGIN</h1>
+      <div className="head-login">
+        <img src={myAmblem} alt='amblem'></img>
+        <h3>LOGIN</h3>
+      </div>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -52,9 +57,17 @@ const Login = () => {
           />
         ))}
         <button>Login</button>
-        <div className="h2">Already have an account?<button className="buttonOne">Login</button></div>
+        <div className="dont-have-account">Already have an account?
+        
+        <a href="">Sign Up</a>
+        </div>
       </form>
     </div>
+    </div>
+      
+
+   
+      
   );
 };
 

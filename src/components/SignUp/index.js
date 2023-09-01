@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../SignUp/formInput.css";
+import "./formInput.scss";
 import FormInput from "../SignUp/FormInput";
+import myAmblem from '../Navbar/amblem.svg' 
 
 const SignUp = () => {
   const [values, setValues] = useState({
@@ -9,13 +10,12 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const inputs = [
+   const inputs = [
     {
       id: 1,
       name: "email",
       type: "email",
       placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
       label: "Email",
       required: true,
     },
@@ -24,8 +24,6 @@ const SignUp = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage:
-        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
@@ -35,12 +33,13 @@ const SignUp = () => {
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
-      errorMessage: "Passwords don't match!",
       label: "Confirm Password",
       pattern: values.password,
       required: true,
     },
-  ];
+  ]; 
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,9 +50,14 @@ const SignUp = () => {
   };
 
   return (
+    
+    <div className="sign-contain">
     <div className="app">
       <form onSubmit={handleSubmit}>
+      <div className="head-sign">
+        <img src={myAmblem} alt='amblem'></img>
         <h1>SIGN UP</h1>
+      </div>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -63,8 +67,10 @@ const SignUp = () => {
           />
         ))}
         <button>Submit</button>
-        <div className="sub">Already have an account?<button className="buttonOne">Login</button></div>
+        <div className="sub">Already have an account?<a className="buttonOne">Login</a>
+        </div>
       </form>
+    </div>
     </div>
   );
 };
