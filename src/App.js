@@ -11,18 +11,19 @@ import EditInformation from "./components/EditInformation/index.js";
 
 function App() {
   return (
-    // <Router>
-    //   <Navbar />
+    //  <Router>
+    //    <Navbar />
       
-    //    <Routes>
-    //     <Route exact path="/signup" Component={SignUp} />
+    //   <Routes>
+    //      <Route exact path="/signup" Component={SignUp} />
     //     <Route exact path="/login" Component={Login} />
     //   </Routes>
       
    
    
-    // </Router>
-    <EditInformation/>
+    //  </Router>
+     <EditInformation/>
+    
   );
 }
 
