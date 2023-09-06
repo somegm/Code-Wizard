@@ -10,7 +10,6 @@ const Navbar = () => {
     <div className="navbar"> 
       <div className="title">
          <img src={MyLogo}></img>
-          {/* <h2>CodeWizard</h2> */}
       </div>
       <div className="input">
       <ul>
