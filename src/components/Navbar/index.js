@@ -1,6 +1,6 @@
 import React from 'react'
  import "./navbar.scss"  
- import myLogo from '../Navbar/codewizard logo.svg'
+ import MyLogo from '../Navbar/codewizard-logo.svg'
  
 
 
@@ -9,7 +9,7 @@ const Navbar = () => {
    
     <div className="navbar"> 
     <div className="title">
-        <img src={myLogo} alt='logo'></img>
+        <MyLogo />
         <h2>CodeWizard</h2>
     </div>
     <div className="input">
