@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../SignUp/formInput.css";
 import FormInput from "../SignUp/FormInput";
 import { Link } from "react-router-dom";
+import EditInformation from "../EditInformation";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -9,7 +10,7 @@ const Login = () => {
     password: "",
   });
 
-  const [userToken, setUserToken] = useState(""); // Token'i saklamak için kullanılacak state
+  const [user_token, setUserToken] = useState(""); // Token'i saklamak için kullanılacak state
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Kullanıcının oturum açık olup olmadığını izlemek için kullanılan state
 
   const inputs = [
@@ -18,7 +19,6 @@ const Login = () => {
       name: "email",
       type: "email",
       placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
       label: "Email",
       required: true,
     },
@@ -27,7 +27,6 @@ const Login = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "You wrote the wrong password",
       label: "Password",
       required: true,
     },
@@ -49,10 +48,11 @@ const Login = () => {
         if (data.message === "success") {
           // Başarılı giriş
           // Token'i localStorage'a kaydet
-          localStorage.setItem('user_token', data.token);
-          setUserToken(data.token);
+          localStorage.setItem('user_token', data.user_token);
+          localStorage.setItem('userId', data.id);
+          setUserToken(user_token);
           setIsLoggedIn(true); // Kullanıcı oturum açtı
-          console.log("Giriş başarılı. Token:", data.user_token); // Token'i console'da gösterme
+          console.log("Giriş başarılı. Token:", ); // Token'i console'da gösterme
         } else {
           // Başarısız giriş
 
@@ -92,31 +92,29 @@ const Login = () => {
 
   return (
     <div className="app">
-      {isLoggedIn ? (
-        <div>
-          {/* Kullanıcı oturum açtıysa burada kullanıcı verilerini görüntüle */}
-          <h1>Welcome, User!</h1>
-          <button onClick={handleLogout}>Logout</button>
-          {/* Kullanıcı verilerini burada görüntüle */}
+    {isLoggedIn ? (
+      <div>
+        sa
+        <button onClick={handleLogout}> logout</button>
+      </div>
+    ) : (
+      <form onSubmit={handleSubmit}>
+        <h1>LOGIN</h1>
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
+          />
+        ))}
+        <button>Login</button>
+        <div className="h2">
+          Already have an account?<Link to="/signup">Sign Up</Link>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <h1>LOGIN</h1>
-          {inputs.map((input) => (
-            <FormInput
-              key={input.id}
-              {...input}
-              value={values[input.name]}
-              onChange={onChange}
-            />
-          ))}
-          <button>Login</button>
-          <div className="h2">
-            Already have an account?<Link to="/signup">Sign Up</Link>
-          </div>
-        </form>
-      )}
-    </div>
+      </form>
+    )}
+  </div>
   );
 };
 

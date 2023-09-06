@@ -3,22 +3,23 @@ import "../EditInformation/edit_information.css";
 
 const EditInformation = () => {
   // User kısmı bilgileri
-  const [title, setTitle] = useState("");
+  const [user_title, setTitle] = useState("");
   const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [message, setMessage] = useState("");
+  const [user_message, setMessage] = useState("");
 
   //Pet kısmının bilgileri
-  const [petTitle, setPetTitle] = useState("");
-  const [petName, setPetName] = useState("");
-  const [petLegal, setPetLegal] = useState("");
-  const [petBreed, setPetBreed] = useState("");
-  const [petIllnesses, setPetIllnesses] = useState("");
-  const [petAdoption, setPetAdoption] = useState("");
-  const [petMessage, setPetMessage] = useState("");
+  const [pet_title, setPetTitle] = useState("");
+  const [pet_name, setPetName] = useState("");
+  const [legal_vaccines, setPetLegal] = useState("");
+  const [pet_breed, setPetBreed] = useState("");
+  const [illness, setPetIllnesses] = useState("");
+  const [adoption_date, setPetAdoption] = useState("");
+  const [pet_message, setPetMessage] = useState("");
+
 
   //Hide Show kısmının ayarlamaları
   const [isPhoneHidden, setIsPhoneHidden] = useState(false); 
@@ -26,42 +27,42 @@ const EditInformation = () => {
   const [isHidden, setIsHidden] = useState(false);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (name === "title") {
+    if (name === "user_title") {
       setTitle(value);
       //user kısmı
     } else if (name === "name") {
       setName(value);
-    } else if (name === "lastName") {
+    } else if (name === "last_name") {
       setLastName(value);
-    } else if (name === "phoneNumber") {
+    } else if (name === "phone_number") {
       setPhoneNumber(value);
     } else if (name === "email") {
       setEmail(value);
     } else if (name === "address") {
       setAddress(value);
-    } else if (name === "message") {
+    } else if (name === "user_message") {
       setMessage(value);
     }
     //pet kısımı
-    else if (name === "petTitle") {
+    else if (name === "pet_title") {
       setPetTitle(value);
     }
-    else if (name === "petName") {
+    else if (name === "pet_name") {
       setPetName(value);
     }
-    else if (name === "petLegal") {
+    else if (name === "pet_legal") {
       setPetLegal(value);
     }
-    else if (name === "petBreed") {
+    else if (name === "pet_breed") {
       setPetBreed(value);
     }
-    else if (name === "petIllnesses") {
+    else if (name === "illness") {
       setPetIllnesses(value);
     }
-    else if (name === "petAdoption") {
+    else if (name === "adoption_date") {
       setPetAdoption(value);
     }
-    else if (name === "petMessage") {
+    else if (name === "pet_message") {
       setPetMessage(value);
     }
 
@@ -78,6 +79,74 @@ const EditInformation = () => {
     setIsHidden(!isHidden);
   };
 
+  //token degiskeni
+  let userToken = localStorage.getItem('user_token');
+  let userId = localStorage.getItem('userId')
+
+
+  //Backend e veri yollama
+
+  const handleSubmit = async () => {
+    //user data
+    const userData = {
+    name,
+    last_name,
+    user_title,
+    phone_number,
+    address,
+    user_message,
+    };
+  
+    // pet data
+    const petData = {
+      pet_breed,
+      pet_title,
+      illness,
+      pet_name,
+      pet_message,
+      adoption_date,
+      legal_vaccines,    
+    };
+  
+    try {
+      //user data API 
+      const userResponse = await fetch("https://s-tekin.jotform.dev/intern-api/user/"+userId+"/user_token/"+userToken+"/update", {
+        method: "PUT", 
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+  
+      if (userResponse.ok) {
+        console.log("User data successfully updated.",userResponse);
+      } else {
+        console.error("User data update failed.");
+      }
+  
+      //pet data API 
+      const petResponse = await fetch("https://s-tekin.jotform.dev/intern-api/pet/user_token/"+userToken+"/create", {
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(petData),
+      });
+  
+      if (petResponse.ok) {
+        console.log("Pet data successfully updated.",petResponse);
+      } else {
+        console.error("Pet data update failed.");
+      }
+  
+  
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
+
+  //pet ekleme kısmı
+ 
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -145,9 +214,9 @@ const EditInformation = () => {
               <span>*</span>
               <input
                 type="text"
-                name="title"
+                name="user_title"
                 placeholder="Input"
-                value={title}
+                value={user_title}
                 onChange={handleInputChange}
               />
             </div>
@@ -167,9 +236,9 @@ const EditInformation = () => {
               <span>*</span>
               <input
                 type="text"
-                name="lastName"
+                name="last_name"
                 placeholder="Your Last name"
-                value={lastName}
+                value={last_name}
                 onChange={handleInputChange}
               />
             </div>
@@ -178,9 +247,9 @@ const EditInformation = () => {
               <span>*</span>
               <input
                 type="number"
-                name="phoneNumber"
+                name="phone_number"
                 placeholder="Phone Number"
-                value={phoneNumber}
+                value={phone_number}
                 onChange={handleInputChange}
               />
               <div className="toggle">
@@ -244,12 +313,12 @@ const EditInformation = () => {
               <p>Message</p>
               <textarea
                 type="text"
-                name="message"
+                name="user_message"
                 cols={5}
                 rows={10}
                 placeholder="Textarea"
                 defaultValue={""}
-                value={message}
+                value={user_message}
                 onChange={handleInputChange}
               />
             </div>
@@ -258,10 +327,7 @@ const EditInformation = () => {
           <div className="pet-information">
             <p>Additional Information</p>
             <select name="pets" id="pets">
-              <option value="pet">Pet</option>
-              <option value="fluffy">Fluffy</option>
-              <option value="kitty">Kitty</option>
-              <option value="bird">Bird</option>
+              
             </select>
           </div>
           <div className="center-container">
@@ -279,9 +345,9 @@ const EditInformation = () => {
                 <p>Pet Title</p>
                 <input
                 type="text"
-                name="petTitle"
+                name="pet_title"
                 placeholder="Ex: Fluffy The Dog"
-                value={petTitle}
+                value={pet_title}
                 onChange={handleInputChange}
               />
               </div>
@@ -289,9 +355,9 @@ const EditInformation = () => {
                 <p>Name</p>
                 <input
                 type="text"
-                name="petName"
+                name="pet_name"
                 placeholder="Pet Name"
-                value={petName}
+                value={pet_name}
                 onChange={handleInputChange}
               />
               </div>
@@ -306,21 +372,21 @@ const EditInformation = () => {
                 <p>Breed</p>
                 <input
                 type="text"
-                name="petBreed"
+                name="pet_breed"
                 placeholder="Breed"
-                value={petBreed}
+                value={pet_breed}
                 onChange={handleInputChange}
               />
               </div>
               <div className="account">
                 <p>Illnesses</p>
                 <textarea
-                  name="petIllnesses"
+                  name="illness"
                   cols={5}
                   rows={10}
                   placeholder="Textarea"
                   defaultValue={""}
-                  value={petIllnesses}
+                  value={illness}
                   onChange={handleInputChange}
                 />
               </div>
@@ -328,27 +394,27 @@ const EditInformation = () => {
                 <p>Adoption Date</p>
                 <input
                 type="text"
-                name="petAdoption"
+                name="adoption_date"
                 placeholder="Pet Adoption"
-                value={petAdoption}
+                value={adoption_date}
                 onChange={handleInputChange}
               />
               </div>
               <div className="account">
                 <p>Message</p>
                 <textarea
-                  name="petMessage"
+                  name="pet_message"
                   cols={5}
                   rows={10}
                   placeholder="Textarea"
                   defaultValue={""}
-                  value={petMessage}
+                  value={pet_message}
                   onChange={handleInputChange}
                 />
               </div>
               <div className="update-button">
                 <button>Add New Pet</button>
-                <button>Submit</button>
+                <button onClick={handleSubmit}>Submit</button>
               </div>
             </div>
           </div>
@@ -364,9 +430,9 @@ const EditInformation = () => {
             </div>
             <div className="name">
               <h5>
-                {name} {lastName}
+                {name} {last_name}
               </h5>
-              <p>{title}</p>
+              <p>{user_title}</p>
             </div>
             <div className="info">
               <h6></h6>
@@ -374,7 +440,7 @@ const EditInformation = () => {
             </div>
             <div className="info">
               <h5>Phone Number:</h5>
-              <p>{isPhoneHidden ? '*****' : phoneNumber}</p>
+              <p>{isPhoneHidden ? '*****' : phone_number}</p>
             </div>
             <div className="info">
               <h5>Address</h5>
@@ -386,35 +452,35 @@ const EditInformation = () => {
             </div>
             <div className="info">
               <h5>Message</h5>
-              <p>{message}</p>
+              <p>{user_message}</p>
             </div>
             <div className="info">
               <h5>Pet Title</h5>
-              <p>{petTitle}</p>
+              <p>{pet_title}</p>
             </div>
             <div className="info">
               <h5>Pet Name</h5>
-              <p>{petName}</p>
+              <p>{pet_name}</p>
             </div>
             <div className="info">
               <h5>Legal Vaccines Completed ? </h5>
-              <p>{petLegal}</p>
+              <p>{legal_vaccines}</p>
             </div>
             <div className="info">
               <h5>Breed</h5>
-              <p>{petBreed}</p>
+              <p>{pet_breed}</p>
             </div>
             <div className="info">
               <h5>Illnesses</h5>
-              <p>{petIllnesses}</p>
+              <p>{illness}</p>
             </div>
             <div className="info">
               <h5>Adoption Date</h5>
-              <p>{petAdoption}</p>
+              <p>{adoption_date}</p>
             </div>
             <div className="info">
               <h5>Pet Message</h5>
-              <p>{petMessage}</p>
+              <p>{pet_message}</p>
             </div>
 
           </div>
