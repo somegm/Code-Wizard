@@ -50,7 +50,7 @@ const EditInformation = () => {
     else if (name === "pet_name") {
       setPetName(value);
     }
-    else if (name === "pet_legal") {
+    else if (name === "legal_vaccines") {
       setPetLegal(value);
     }
     else if (name === "pet_breed") {
@@ -125,6 +125,7 @@ const EditInformation = () => {
       }
   
       //pet data API 
+      
       const petResponse = await fetch("https://s-tekin.jotform.dev/intern-api/pet/user_token/"+userToken+"/create", {
         method: "POST", 
         headers: {
@@ -363,9 +364,9 @@ const EditInformation = () => {
               </div>
               <div className="account">
                 <p>Legal Vaccines Completed?</p>
-                <select name="pets" id="pets">
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                <select name="legal_vaccines" value={legal_vaccines} onChange={handleInputChange}>
+                  <option >Yes</option>
+                  <option >No</option>
                 </select>
               </div>
               <div className="account">

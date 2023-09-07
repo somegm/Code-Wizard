@@ -3,6 +3,7 @@ import "../SignUp/formInput.css";
 import FormInput from "../SignUp/FormInput";
 import { Link } from "react-router-dom";
 import EditInformation from "../EditInformation";
+import ChooseType from "../ChooseType";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -48,11 +49,11 @@ const Login = () => {
         if (data.message === "success") {
           // Başarılı giriş
           // Token'i localStorage'a kaydet
-          localStorage.setItem('user_token', data.user_token);
-          localStorage.setItem('userId', data.id);
+          localStorage.setItem('user_token', data.content.user_token);
+          localStorage.setItem('userId', data.content.id);
           setUserToken(user_token);
           setIsLoggedIn(true); // Kullanıcı oturum açtı
-          console.log("Giriş başarılı. Token:", ); // Token'i console'da gösterme
+          console.log("Giriş başarılı. Token:"); // Token'i console'da gösterme
         } else {
           // Başarısız giriş
 
@@ -93,10 +94,14 @@ const Login = () => {
   return (
     <div className="app">
     {isLoggedIn ? (
-      <div>
-        sa
-        <button onClick={handleLogout}> logout</button>
-      </div>
+      //  <div>
+
+      // çık label
+      // <button onClick={handleLogout}>logout</button>
+      //  </div>
+      <ChooseType/>
+      
+     
     ) : (
       <form onSubmit={handleSubmit}>
         <h1>LOGIN</h1>

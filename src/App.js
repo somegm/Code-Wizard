@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/signup" Component={SignUp} />
         <Route exact path="/login" Component={Login} />
       </Routes>
-      <ChooseType/>
+     
     </Router>
   );
 }
