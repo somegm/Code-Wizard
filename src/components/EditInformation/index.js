@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import "../EditInformation/edit_information.scss";
+import Done from '../img/done-white.svg'
+import EditWhite from '../img/edit-white.svg'
+import Customize from '../img/customize-blue-2.svg'
+import Save from '../img/save-blue-2.svg'
+import Upload from '../img/UploadImg.svg'
+import UploadImg from '../img/account-img.svg'
+import PetImg from '../img/pet-img.svg'
+import Next from '../img/arrow-next.svg'
+import RandomUser from '../img/RandomUser.svg'
 
 const EditInformation = () => {
   // User kısmı bilgileri
@@ -149,55 +158,53 @@ const EditInformation = () => {
  
   return (
     <div>
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link rel="stylesheet" href="edit_information.css" />
-      <div className="navbar">
-        <div className="title">
-          <img src="img/codewizard logo.svg" alt="logo" />
-          <h2>CodeWizard</h2>
-        </div>
-        <div className="input">
-          <ul>
-            <li>
-              <img src="/img/ic_outline-account-circle (1).svg" alt />
-              <a href>Dashboard</a>
-            </li>
-            <li>
-              <img src="/img/ic_outline-settings.svg" alt />
-              <a href>Settings</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <div className="main-top">
+      <div className="circle-container">
         <div className="circle">
           <button className="active">
-            <img src="/img/choose-type-2.svg" alt />
+            <img src={Done} alt />
           </button>
           <p>Choose Type</p>
         </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+
         <div className="circle">
-          <button>
-            <img src="/img/edit-information-2.svg" alt />
+          <button className="current">
+            <img src={EditWhite} alt />
           </button>
           <p>Edit Information</p>
         </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+  
         <div className="circle">
           <button>
-            <img src="/img/customize-2.svg" alt />
+            <img src={Customize} alt />
           </button>
           <p>Customize</p>
         </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+
         <div className="circle">
           <button>
-            <img src="/img/save-2.svg" alt />
+            <img src={Save} alt />
           </button>
           <p>Save</p>
         </div>
+        </div>
+
       </div>
       <div className="main-center">
+      <div className="left-side-container">
+        <p className="top-title">Edit Information</p>
         <div className="left-side">
           <div className="personal-information">
             <p>Personal Information</p>
@@ -205,9 +212,14 @@ const EditInformation = () => {
           <div className="user-form-input">
             <div className="account">
               <button>
-                <img src="/img/upload-image.svg" alt />
+                <img src={UploadImg} alt />
               </button>
-              <a href>Upload İmage</a>
+              <div className="upload-img">
+
+              <img src={Upload}></img>
+              <input className="file-input" type="file">
+              </input>
+              </div>
             </div>
             <div className="account">
               <p>Title</p>
@@ -326,7 +338,8 @@ const EditInformation = () => {
           {/*  Pet İnformation Section    */}
           <div className="pet-information">
             <p>Additional Information</p>
-            <select name="pets" id="pets">
+            <select name="pets" id="pets" >
+            <option value="value" selected>-Choose Pet-</option>
               
             </select>
           </div>
@@ -336,10 +349,18 @@ const EditInformation = () => {
             </div>
             <div className="pet-form-input">
               <div className="account">
+              
                 <button>
-                  <img src="/img/upload-image.svg" alt />
+                  <img src={PetImg}></img>
                 </button>
-                <a href>Upload İmage</a>
+                <div className="upload-img">
+
+                  <img src={Upload}></img>
+                  <input className="file-input" type="file">
+                  </input>
+                </div>
+              
+                
               </div>
               <div className="account">
                 <p>Pet Title</p>
@@ -420,13 +441,14 @@ const EditInformation = () => {
           </div>
           {/*  */}
         </div>
+        </div>
         <div className="right-side">
           <div className="right-side-top">
-            <h5>Preview</h5>
+            <h5 className="right-top-title">Preview</h5>
           </div>
           <div className="right-side-center">
             <div className="profile">
-              <img src="/img/Ellipse 4.svg" alt />
+              <img src={RandomUser} alt />
             </div>
             <div className="name">
               <h5>

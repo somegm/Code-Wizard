@@ -106,8 +106,11 @@ const Login = () => {
         <button onClick={handleLogout}> logout</button>
       </div>
     ) : (
+      
       <form onSubmit={handleSubmit}>
-        <h1>LOGIN</h1>
+      <div className="head-login">
+            <h3>LOGIN</h3>
+          </div>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -117,7 +120,7 @@ const Login = () => {
           />
         ))}
         <button type="submit">Login</button>
-        <div className="h2">
+        <div className="dont-have-account">
           Already have an account?<Link to="/signup">Sign Up</Link>
         </div>
       </form>
