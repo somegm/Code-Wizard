@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../ChooseType/style.css";
 import personal from "../../images/icons/personal.svg";
 import app from "../../images/icons/app.svg";
@@ -11,9 +12,34 @@ import music from "../../images/icons/music.svg";
 import pdf from "../../images/icons/pdf.svg";
 import social from "../../images/icons/social.svg";
 
-
 const ChooseType = () => {
+  const [profileData, setProfileData] = useState({});
+  //token degiskeni
+  let userToken = localStorage.getItem('user_token');
+  let userId = localStorage.getItem('userId');
 
+  //veri çekme
+  
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://s-tekin.jotform.dev/intern-api/user/"+userId+"/user_token/"+userToken+"/details"
+      );
+
+      if (!response.ok) {
+        throw new Error("Veri alınamadı");
+      }
+
+      const data = await response.json();
+      setProfileData(data);
+    } catch (error) {
+      console.error("Veri çekme hatası: ", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -126,65 +152,60 @@ const ChooseType = () => {
                 <img src="/img/Ellipse 4.svg" alt="" />
               </div>
               <div className="name">
-                <h5>John Doe</h5>
-                <p>Owner of Fluffy</p>
+                <h5>
+                  {profileData.name} {profileData.last_name}
+                </h5>
+                <p>{profileData.user_title}</p>
               </div>
+              <div className="info"></div>
               <div className="info">
-                <h6>John’s Message:</h6>
-                <p>
-                  {" "}
-                  If you found my dog, please contact me from the information
-                  below! Thank you!{" "}
-                </p>
-              </div>
-              <div className="info">
-                <h5>Phone Number</h5>
-                <p>+91919191</p>
+                <h5>Phone Number:</h5>
+                <p>{profileData.phone_number}</p>
               </div>
               <div className="info">
                 <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
+                <p>{profileData.address}</p>
               </div>
               <div className="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
+                <h5>E-mail Adress</h5>
+                <p></p>
               </div>
               <div className="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
+                <h5>Message</h5>
+                <p>{profileData.user_message}</p>
               </div>
               <div className="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
+                <h5>Pet Title</h5>
+                <p>{profileData.pet_title}</p>
               </div>
               <div className="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
+                <h5>Pet Name</h5>
+                <p>{profileData.pet_name}</p>
               </div>
               <div className="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
+                <h5>Legal Vaccines Completed ? </h5>
+                <p>{profileData.legal_vaccines}</p>
               </div>
               <div className="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
+                <h5>Breed</h5>
+                <p>{profileData.pet_breed}</p>
               </div>
               <div className="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
+                <h5>Illnesses</h5>
+                <p>{profileData.illness}</p>
               </div>
               <div className="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
+                <h5>Adoption Date</h5>
+                <p>{profileData.adoption_date}</p>
               </div>
               <div className="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
+                <h5>Pet Message</h5>
+                <p>{profileData.pet_message}</p>
               </div>
             </div>
             <div className="right-side-bottom">
-            <button>Previous</button>
-            <button >Next</button>
+              <button>Previous</button>
+              <button>Next</button>
             </div>
           </div>
         </div>
