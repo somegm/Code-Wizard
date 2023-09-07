@@ -56,7 +56,8 @@ const Login = () => {
           localStorage.setItem('userId', data.content.id);
           setUserToken(user_token);
           setIsLoggedIn(true); // Kullanıcı oturum açtı
-          console.log("Giriş başarılı. Token:"); // Token'i console'da gösterme
+          console.log("Giriş başarılı. Token:");
+          console.log(data) // Token'i console'da gösterme
         } else {
           // Başarısız giriş
 
@@ -100,12 +101,12 @@ const Login = () => {
       <img src={LoginImg}></img>
     </div>
   <div className='login-main'>
-    <h2 className='titleWel'>Welcome Back!</h2>
     <div className="app">
     {isLoggedIn ? (
-       <div>
-      <button onClick={handleLogout}>logout</button>
-       </div>
+        //  <div>
+        //      <button onClick={handleLogout}>logout</button>
+        //  </div>
+<ChooseType/>
    
       
      
