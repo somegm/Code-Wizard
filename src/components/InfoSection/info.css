@@ -7,13 +7,16 @@
   z-index: 1;
 }
 .info-container .background {
+  /*  height: calc(100vh - 70px); */
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 167.874px;
+  top: 86px;
 }
 .info-container .background img {
-  height: 100%;
   position: absolute;
   z-index: -1;
 }

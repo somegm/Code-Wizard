@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../EditInformation/edit_information.css";
+import "../EditInformation/edit_information.scss";
 
 const EditInformation = () => {
   // User kısmı bilgileri

@@ -17,7 +17,7 @@
   z-index: 1;
 }
 .sign-contain .background {
-  margin-left: 200px;
+  margin-left: 300px;
   z-index: -1;
   height: calc(100vh - 70px);
   position: absolute;
