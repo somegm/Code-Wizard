@@ -103,12 +103,10 @@ const Login = () => {
     <h2 className='titleWel'>Welcome Back!</h2>
     <div className="app">
     {isLoggedIn ? (
-      //  <div>
-
-      // çık label
-      // <button onClick={handleLogout}>logout</button>
-      //  </div>
-      <ChooseType/>
+       <div>
+      <button onClick={handleLogout}>logout</button>
+       </div>
+   
       
      
     ) : (

@@ -1,6 +1,4 @@
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import Navbar from "./components/Navbar/index.js";
 import Login from "./components/LoginSection/index"
 import SignUp from "./components/SignUp/index.js";
