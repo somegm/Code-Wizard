@@ -32,9 +32,9 @@ $secondary-color:#F4FDCE;
 } 
 
 ::-webkit-scrollbar-thumb {
-  background: #3D0FF5; 
+  background: #2563EB; 
   border-radius: 10px;
-  border: 4px solid #F4FDCE;
+  border: 4px solid #fff;
   
   
 } 
@@ -58,77 +58,77 @@ body{
    
    
    
-  //   .navbar{
-  //   width: 100%;
-  //   height: 80px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   border-radius: 0 0 24px 24px;
-  //   background-color: $toggle-color;
+    .navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 24px 24px;
+    background-color: $toggle-color;
   
     
   
-  // .title{
-  //   display: flex;
-  //   align-items: center;
-  //   margin-left: 24px;
-  //   font-size: 28px;
-  //   color: $secondary-color;
+  .title{
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    font-size: 28px;
+    color: $secondary-color;
 
-  //   img{
-  //     width: 48px;
-  //     height: 48px;
-  //     margin-right: 16px;
-  //   }
+    img{
+      width: 48px;
+      height: 48px;
+      margin-right: 16px;
+    }
     
-  // }
+  }
   
-  // .input{
-  //   display:flex ;
-  //   color: #23186F;
+  .input{
+    display:flex ;
+    color: #23186F;
   
-  // ul{
-  //   display: flex;
-  //   align-items: center;
+  ul{
+    display: flex;
+    align-items: center;
    
-  // li{
-  //   display: flex;
-  //   align-items: center;
-  //   cursor: pointer;
+  li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     
 
-  //   a{
-  //     color: $secondary-color;
-  //     font-size: 16px;
+    a{
+      color: $secondary-color;
+      font-size: 16px;
       
-  //   }
+    }
    
 
     
-  //   button{
-  //       border: none;
-  //       background-color:rgba(128, 128, 128, 0.1) ;
-  //       cursor: pointer;
-  //   }
+    button{
+        border: none;
+        background-color:rgba(128, 128, 128, 0.1) ;
+        cursor: pointer;
+    }
 
-  //   a{
-  //     display: flex;
-  //     margin-right: 16px;
-  //     margin-left: 4px;
-  //     /* color: black; */
-  //     .img{
-  //       width: 32px;
-  //       height: 32px;
-  //     }
-  //   }
+    a{
+      display: flex;
+      margin-right: 16px;
+      margin-left: 4px;
+      /* color: black; */
+      .img{
+        width: 32px;
+        height: 32px;
+      }
+    }
     
-  // }
+  }
   
-  // }  
+  }  
   
-  // }
+  }
   
-  // }
+  }
 
 
     .main-top{
@@ -138,16 +138,27 @@ body{
       height: 120px;
 
       border-radius: 16px 16px 0 0 ;
+
+      .circle-container{
+        width: 728px;
+        display: flex;
+        justify-content: space-between;
+        
+        .next{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       
       .circle{
         display: flex;
         flex-direction: column;
-        margin-left:50px;
+        
         align-items: center;
         button{
           width: 36px;
           height: 36px;
-          background-color: #D5F6EA;
+          background-color: #97B2EB;
           border-radius: 6px;
           display: flex;
          border: none;
@@ -157,12 +168,13 @@ body{
          align-items: center;
          justify-content: center;
 
-        
-
+         
         }
-
+          .current{
+          background-color: #2563EB;
+         }
         .active{
-          background-color: #3D0FF5;
+          background-color: #0C2A69;
          }
 
         p{
@@ -171,26 +183,48 @@ body{
       }
     }
 
+      
+    }
+
     .main-center{
       display: flex;
-      height: 100vh;
+      height:calc(100vh - 190px);
       justify-content: space-evenly;
-      border-radius: 0 0 16px 16px;
      
+      
      
 
       h5{
         font-size: 20px;
         color: #23186F;
         margin-bottom: 12px;
+        font-family: Arimo;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
       }
-    
+    .left-side-container{
+      height: 100%;
+
+      .top-title{
+        color:  #0C2A69;
+
+        font-family: Arimo;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        margin-bottom: 12px;
+      }
       .left-side{
         max-width: 680px;
         width: 100%;
-        height: 540px;
+        /* height: 515px; */
+        height:calc(100vh - 260px);
         
-        background-color: #F4FDCE;
+        box-shadow: 0px 0px 16px 0px rgba(1, 37, 70, 0.10);
         border-radius: 16px;
         display:flex ;
        flex-direction: column;
@@ -221,6 +255,25 @@ body{
           padding-right: 20px;
 
 
+          .file-input::-webkit-file-upload-button {
+            visibility: hidden;
+
+          }
+          .file-input::before{
+            content: 'Upload Photo';
+            display: inline-block;
+            
+  
+            padding-left: 20px;
+            outline: none;
+            white-space: nowrap;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+          }
+
+
           .account{
             width: 280px;
             height: 100px;
@@ -230,6 +283,24 @@ body{
             flex-wrap: wrap;
 
             margin: 0px 12px;
+
+            .upload-img{
+              position: relative;
+              
+              img{
+             
+                position: absolute;
+                padding: 15px;
+              }
+
+              .file-input{
+            border: 1px dashed #6B697A;
+            
+            
+          }
+            }
+            
+          
             
 
             /* ------------------- */
@@ -237,9 +308,10 @@ body{
         
             .toggle{
               width: 136px;
-              /* width: 100%; */
+              
               display: flex;
               margin-left: 144px;
+              
 
               color: $toggle-color;
 
@@ -314,12 +386,12 @@ body{
           
 
             button{
-              width: 40px;
-              height: 40px;
-              background-color: yellow;
+              width: 56px;
+              height:56px;
+              background-color: #2563EB;
               cursor: pointer;
-
-              border-radius: 6px;
+              border-radius: 50%;
+   
               display: flex;
               align-items: center;
               justify-content: center;
@@ -354,7 +426,7 @@ body{
               border-radius: 6px;
               padding: 10px;
 
-              background-color: #F4FDCE;
+              border: 1px solid  #6B697A;
               &:focus{
                 outline: none;
               }
@@ -366,7 +438,7 @@ body{
               width: calc(100% - 84px);
               height: 76px;
 
-              background: #F4FDCE;
+              border: 1px solid  #6B697A;
               border: 1px solid #23186F;
               border-radius: 6px;
               padding: 10px;
@@ -390,7 +462,7 @@ body{
           height: 12px;
           border-radius: 50%;
          margin-top: 30px;
-         background: #F4FDCE;
+         border: 1px solid  #6B697A;
         }
 
         p{
@@ -399,12 +471,12 @@ body{
       
 
         select{
-          width: 100px;
+          width: 112px;
           height: 40px;
 
           border-radius: 6px;
-          border: 1px solid #23186F;
-          background: #F4FDCE;
+          
+          border: 1px solid  #6B697A;
 
           
         }
@@ -431,7 +503,7 @@ body{
           display: flex;
           flex-direction: column;
           justify-content:flex-start ;
-          background-color: #F4FDCE;
+          border: 1px solid  #6B697A;
         }
 
        }
@@ -446,6 +518,27 @@ body{
       
         padding-right: 20px;
 
+        .file-input::-webkit-file-upload-button {
+          visibility: hidden;
+
+        }
+
+        .file-input::before{
+          content: 'Upload Photo';
+          display: inline-block;
+          
+
+          padding-left: 25px;
+          outline: none;
+          white-space: nowrap;
+          cursor: pointer;
+          text-shadow: 1px 1px #fff;
+          font-weight: 700;
+          font-size: 10pt;
+        }
+
+       
+
 
         .account{
           width: 264px;
@@ -455,6 +548,22 @@ body{
           justify-content: space-between;
 
           margin: 0px 12px;
+
+          .upload-img{
+            position: relative;
+
+            .file-input{
+              width: 175px;
+              border: 1px dashed #6B697A;
+            }
+            img{
+              position: absolute;
+              padding: 15px;
+            }
+          }
+
+         
+          
          
 
           select{
@@ -462,19 +571,19 @@ body{
           height: 40px;
 
           border-radius: 6px;
-          background-color: #F4FDCE;
-          border: 1px solid #23186F;
+          
+          border: 1px solid  #6B697A;
 
 
           }
 
           button{
-            width: 40px;
-            height: 40px;
-            background-color: yellow;
+            width: 56px;
+            height: 56px;
+            background-color: #2563EB;
             cursor: pointer;
 
-            border-radius: 6px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -497,7 +606,7 @@ body{
             border: 1px solid #23186F;
             border-radius: 6px;
             padding: 10px;
-            background-color: #F4FDCE;
+            border: 1px solid  #6B697A;
             &:focus{
               outline: none;
             }
@@ -511,7 +620,7 @@ body{
             border: 1px solid #23186F;
             border-radius: 6px;
             padding: 10px;
-            background-color: #F4FDCE;
+            border: 1px solid  #6B697A;
           
 
           }
@@ -549,6 +658,7 @@ body{
         }
 
   }
+}
 
     
 
@@ -565,8 +675,12 @@ body{
       .right-side-top{
         display: flex;
         justify-content: flex-end;
-        font-size: 16px;
+        
         margin-bottom: 12px;
+
+        .right-top-title{
+          font-size: 20px;
+        }
       }
 
       
@@ -580,10 +694,9 @@ body{
       
         
         border-radius: 16px;
-        background-color: #F4FDCE;
+        box-shadow: 0px 0px 16px 0px rgba(0, 43, 137, 0.25);
         
-        
-        margin-bottom: auto;
+        margin-bottom: 12px;
        overflow-y: auto;
         
        .name{
@@ -655,4 +768,4 @@ body{
 
 
 
-  }
+  
