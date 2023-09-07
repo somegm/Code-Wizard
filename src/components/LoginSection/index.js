@@ -4,6 +4,9 @@ import FormInput from "../SignUp/FormInput";
 import { Link } from "react-router-dom";
 import EditInformation from "../EditInformation";
 import ChooseType from "../ChooseType";
+import Background from '../SignUp/backgroundimg.svg'
+import LoginImg from './LoginPageImg.svg'
+
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -92,6 +95,12 @@ const Login = () => {
   }, []);
 
   return (
+    <div className="login-panel">
+    <div className='landing'>
+      <img src={LoginImg}></img>
+    </div>
+  <div className='login-main'>
+    <h2 className='titleWel'>Welcome Back!</h2>
     <div className="app">
     {isLoggedIn ? (
       //  <div>
@@ -113,12 +122,14 @@ const Login = () => {
             onChange={onChange}
           />
         ))}
-        <button>Login</button>
+        <button type="submit">Login</button>
         <div className="h2">
           Already have an account?<Link to="/signup">Sign Up</Link>
         </div>
       </form>
     )}
+  </div>
+  </div>
   </div>
   );
 };

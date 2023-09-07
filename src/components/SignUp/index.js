@@ -2,6 +2,10 @@ import { useState } from "react";
 import "../SignUp/formInput.css";
 import FormInput from "../SignUp/FormInput";
 import {Link} from "react-router-dom"
+import Signimg from './signupimg.svg'
+import Background from './backgroundimg.svg'
+
+
 
 const SignUp = () => {
   const [values, setValues] = useState({
@@ -19,7 +23,7 @@ const SignUp = () => {
       id: 1,
       name: "email",
       type: "email",
-      placeholder: "Email",
+      placeholder: "johndoe@email.com",
       label: "Email",
       required: true,
     },
@@ -27,7 +31,7 @@ const SignUp = () => {
       id: 2,
       name: "password",
       type: "password",
-      placeholder: "Password",
+      placeholder: "Create Password",
       errorMessage:
         "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
@@ -89,9 +93,19 @@ const SignUp = () => {
   };
 
   return (
+    <div className="sign-contain">
+      <img className="background" src={Background}></img>
+      <div className='img'>
+      <div className="landing-container">
+        <img className='heroImage' src={Signimg}></img>
+        <h2 className='titleWel'>Welcome!</h2>
+        </div>
     <div className="app">
+    
       <form onSubmit={handleSubmit}>
-        <h1>SIGN UP</h1>
+      <div className="head-sign">
+            <h1>SIGN UP</h1>
+          </div>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -105,6 +119,8 @@ const SignUp = () => {
           Already have an account?<Link to="/login">Login</Link>
         </div>
       </form>
+    </div>
+    </div>
     </div>
   );
 };
