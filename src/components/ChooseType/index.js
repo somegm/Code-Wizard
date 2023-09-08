@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "../ChooseType/style.css";
+import "../ChooseType/style.scss";
 import personal from "../../images/icons/personal.svg";
 import app from "../../images/icons/app.svg";
 import business from "../../images/icons/business.svg";
@@ -11,6 +10,12 @@ import multiple from "../../images/icons/multiple.svg";
 import music from "../../images/icons/music.svg";
 import pdf from "../../images/icons/pdf.svg";
 import social from "../../images/icons/social.svg";
+
+import Done from '../img/done-white.svg'
+import EditWhite from '../img/edit-white.svg'
+import Customize from '../img/customize-blue-2.svg'
+import Save from '../img/save-blue-2.svg'
+import Next from '../img/arrow-next.svg'
 
 const ChooseType = () => {
   const [profileData, setProfileData] = useState({});
@@ -42,13 +47,8 @@ const ChooseType = () => {
   }, []);
 
   return (
-    <>
-      <html>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
-        <div className="main-top">
+    <div>
+       {/*  <div className="main-top">
           <div className="circle">
             <button>
               <i className="fa-solid fa-users" style={{ color: "#4831d4" }} />
@@ -86,7 +86,55 @@ const ChooseType = () => {
             </button>
             <p>Download QR</p>
           </div>
+        </div> */}
+
+        <div className="main-top">
+      <div className="circle-container">
+        <div className="circle">
+          <button className="active">
+            <img src={Done} alt />
+          </button>
+          <p>Choose Type</p>
         </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+
+        <div className="circle">
+          <button className="current">
+            <img src={EditWhite} alt />
+          </button>
+          <p>Edit Information</p>
+        </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+  
+        <div className="circle">
+          <button>
+            <img src={Customize} alt />
+          </button>
+          <p>Customize</p>
+        </div>
+
+        <div class="next">
+            <img src={Next} ></img>
+        </div>
+
+        <div className="circle">
+          <button>
+            <img src={Save} alt />
+          </button>
+          <p>Save</p>
+        </div>
+        </div>
+
+      </div>
+
+        {/* main top bitiş */}
+
         <div className="main-center">
           <div className="left-side-container">
             <h5>Choose Your QR Code Type</h5>
@@ -209,8 +257,11 @@ const ChooseType = () => {
             </div>
           </div>
         </div>
-      </html>
-    </>
+        </div>
+
+   
+
+  
   );
 };
 

@@ -4,7 +4,9 @@ $font: 'Arimo', sans-serif;
 
 
 $toggle-color:#3D0FF5;
-$secondary-color:#F4FDCE;
+$scroll-color:#2563EB;
+$color-1:#97B2EB;
+$color-2:#FFFFFF;
 
 
 
@@ -32,9 +34,9 @@ $secondary-color:#F4FDCE;
 } 
 
 ::-webkit-scrollbar-thumb {
-  background: #2563EB; 
+  background: $scroll-color; 
   border-radius: 10px;
-  border: 4px solid #fff;
+  border: 4px solid $color-2;
   
   
 } 
@@ -50,7 +52,6 @@ $secondary-color:#F4FDCE;
       justify-content: center;
       align-items: center;
       height: 120px;
-
       border-radius: 16px 16px 0 0 ;
 
       .circle-container{
@@ -72,7 +73,7 @@ $secondary-color:#F4FDCE;
         button{
           width: 36px;
           height: 36px;
-          background-color: #97B2EB;
+          background-color: $color-1;
           border-radius: 6px;
           display: flex;
          border: none;
@@ -141,7 +142,8 @@ $secondary-color:#F4FDCE;
         box-shadow: 0px 0px 16px 0px rgba(1, 37, 70, 0.10);
         border-radius: 16px;
         display:flex ;
-       flex-direction: column;
+        flex-direction: column;
+       
 
        padding: 16px;
 
@@ -153,6 +155,7 @@ $secondary-color:#F4FDCE;
        .personal-information{
         display:flex;
         width: 100%;
+        
 
         
        
@@ -182,7 +185,7 @@ $secondary-color:#F4FDCE;
             outline: none;
             white-space: nowrap;
             cursor: pointer;
-            text-shadow: 1px 1px #fff;
+            text-shadow: 1px 1px $color-2;
             font-weight: 700;
             font-size: 10pt;
           }
@@ -252,7 +255,7 @@ $secondary-color:#F4FDCE;
               text-indent: -9999px;
               width: 40px;
               height: 20px;
-              background: #fff;
+              background: $color-2;
               /* display: block; */
               border-radius: 100px;
               position: relative;
@@ -302,7 +305,7 @@ $secondary-color:#F4FDCE;
             button{
               width: 56px;
               height:56px;
-              background-color: #2563EB;
+              background-color: $scroll-color;
               cursor: pointer;
               border-radius: 50%;
    
@@ -364,6 +367,8 @@ $secondary-color:#F4FDCE;
          
        }
 
+        /* Additional İnformation Section */
+
        .pet-information{
         display:flex;
         width:600px;
@@ -423,9 +428,7 @@ $secondary-color:#F4FDCE;
        }
         
        .pet-form-input{
-        width: 648px;
-       
-
+        width:632px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -446,7 +449,7 @@ $secondary-color:#F4FDCE;
           outline: none;
           white-space: nowrap;
           cursor: pointer;
-          text-shadow: 1px 1px #fff;
+          text-shadow: 1px 1px $color-2;
           font-weight: 700;
           font-size: 10pt;
         }
@@ -455,7 +458,7 @@ $secondary-color:#F4FDCE;
 
 
         .account{
-          width: 264px;
+          width: 280px;
           height: 80px;
           display: flex;
           align-items: center;
@@ -481,7 +484,7 @@ $secondary-color:#F4FDCE;
          
 
           select{
-            width: 95%;
+            width: 200px;
           height: 40px;
 
           border-radius: 6px;
@@ -494,7 +497,7 @@ $secondary-color:#F4FDCE;
           button{
             width: 56px;
             height: 56px;
-            background-color: #2563EB;
+            background-color: $scroll-color;
             cursor: pointer;
 
             border-radius: 50%;
@@ -549,7 +552,7 @@ $secondary-color:#F4FDCE;
           justify-content: flex-end;
           
           button{
-          
+         
           display: flex;
           align-items: center;
           justify-content: center;
@@ -559,7 +562,7 @@ $secondary-color:#F4FDCE;
           border-radius: 12px;
           
           background-color: #9083E5;
-          color: #fff;
+          color: $color-2;
 
           cursor: pointer;
 
@@ -612,6 +615,7 @@ $secondary-color:#F4FDCE;
         
         margin-bottom: 12px;
        overflow-y: auto;
+       overflow-x: hidden;
         
        .name{
         display: flex;
@@ -660,7 +664,7 @@ $secondary-color:#F4FDCE;
           margin-left: 20px;
           padding: 16px;
           background-color: #9083E5;
-          color: #fff;
+          color: $color-2;
 
           cursor: pointer;
 
