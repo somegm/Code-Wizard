@@ -48,10 +48,10 @@ $color-2:#FFFFFF;
 
 
  
-body{
+.main-container{
   
-    height: 100vh;
-    /* background-color: rgba(128, 128, 128, 0.1); */
+    height: calc(100vh - 70px);
+ 
     display:flex ;
    flex-direction: column;
 
@@ -59,78 +59,6 @@ body{
    
    
    
-   
-    .navbar{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 0 0 24px 24px;
-    background-color: $toggle-color;
-  
-    
-  
-  .title{
-    display: flex;
-    align-items: center;
-    margin-left: 24px;
-    font-size: 28px;
-    color: $secondary-color;
-
-    img{
-      width: 48px;
-      height: 48px;
-      margin-right: 16px;
-    }
-    
-  }
-  
-  .input{
-    display:flex ;
-    color: #23186F;
-  
-  ul{
-    display: flex;
-    align-items: center;
-   
-  li{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    
-
-    a{
-      color: $secondary-color;
-      font-size: 16px;
-      
-    }
-   
-
-    
-    button{
-        border: none;
-        background-color:rgba(128, 128, 128, 0.1) ;
-        cursor: pointer;
-    }
-
-    a{
-      display: flex;
-      margin-right: 16px;
-      margin-left: 4px;
-      /* color: black; */
-      .img{
-        width: 32px;
-        height: 32px;
-      }
-    }
-    
-  }
-  
-  }  
-  
-  }
-  
-  }
 
 
     .main-top{
@@ -138,7 +66,7 @@ body{
       justify-content: center;
       align-items: center;
       height: 120px;
-      border-radius: 16px 16px 0 0 ;
+     
 
       .circle-container{
         width: 728px;
@@ -772,4 +700,4 @@ body{
 
 
 
-  
+}

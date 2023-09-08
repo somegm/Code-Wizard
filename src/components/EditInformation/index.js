@@ -157,29 +157,8 @@ const EditInformation = () => {
   //pet ekleme kısmı
  
   return (
-    <div>
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link rel="stylesheet" href="edit_information.css" />
-      <div className="navbar">
-        <div className="title">
-          <img src="img/codewizard logo.svg" alt="logo" />
-          <h2>CodeWizard</h2>
-        </div>
-        <div className="input">
-          <ul>
-            <li>
-              <img src="/img/ic_outline-account-circle (1).svg" alt />
-              <a href>Dashboard</a>
-            </li>
-            <li>
-              <img src="/img/ic_outline-settings.svg" alt />
-              <a href>Settings</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className="main-container">
+ 
       <div className="main-top">
       <div className="circle-container">
         <div className="circle">
