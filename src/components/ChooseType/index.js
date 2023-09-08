@@ -18,32 +18,65 @@ import Save from '../img/save-blue-2.svg'
 import Next from '../img/arrow-next.svg'
 
 const ChooseType = () => {
-  const [profileData, setProfileData] = useState({});
+  const [data, setData] = useState({});
+  const [petData, setPetData] = useState({});
+  console.log(data)
   //token degiskeni
-  let userToken = localStorage.getItem('user_token');
-  let userId = localStorage.getItem('userId');
+  let userToken = localStorage.getItem("user_token");
+  let userId = localStorage.getItem("userId");
 
-  //veri çekme
-  
+  //kullanıcı veri çekme
+
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://s-tekin.jotform.dev/intern-api/user/"+userId+"/user_token/"+userToken+"/details"
+        "https://s-tekin.jotform.dev/intern-api/user/" +
+          userId +
+          "/details?user_token=" +
+          userToken
       );
 
       if (!response.ok) {
         throw new Error("Veri alınamadı");
       }
 
-      const data = await response.json();
-      setProfileData(data);
+      const responseData = await response.json();
+      setData(responseData);
     } catch (error) {
       console.error("Veri çekme hatası: ", error);
     }
   };
-
   useEffect(() => {
     fetchData();
+  }, []);
+
+
+
+
+
+
+
+  
+  //pet bilgilerini çekme 
+  const petFetchData = async () => {
+    try {
+      const responsePets = await fetch(
+        "https://s-tekin.jotform.dev/intern-api/pet/48?user_token="+userToken
+      );
+
+      if (!responsePets.ok) {
+        throw new Error("Veri alınamadı");
+      }
+
+      const responsePetData = await responsePets.json();
+      setPetData(responsePetData);
+      console.log(responsePetData)
+    } catch (error) {
+      console.error("Veri çekme hatası: ", error);
+    }
+  };
+  useEffect(() => {
+    petFetchData();
   }, []);
 
   return (
@@ -200,55 +233,61 @@ const ChooseType = () => {
                 <img src="/img/Ellipse 4.svg" alt="" />
               </div>
               <div className="name">
-                <h5>
-                  {profileData.name} {profileData.last_name}
-                </h5>
-                <p>{profileData.user_title}</p>
-              </div>
-              <div className="info"></div>
-              <div className="info">
-                <h5>Phone Number:</h5>
-                <p>{profileData.phone_number}</p>
-              </div>
-              <div className="info">
-                <h5>Address</h5>
-                <p>{profileData.address}</p>
-              </div>
-              <div className="info">
-                <h5>E-mail Adress</h5>
-                <p></p>
-              </div>
-              <div className="info">
-                <h5>Message</h5>
-                <p>{profileData.user_message}</p>
-              </div>
-              <div className="info">
-                <h5>Pet Title</h5>
-                <p>{profileData.pet_title}</p>
-              </div>
-              <div className="info">
-                <h5>Pet Name</h5>
-                <p>{profileData.pet_name}</p>
-              </div>
-              <div className="info">
-                <h5>Legal Vaccines Completed ? </h5>
-                <p>{profileData.legal_vaccines}</p>
-              </div>
-              <div className="info">
-                <h5>Breed</h5>
-                <p>{profileData.pet_breed}</p>
-              </div>
-              <div className="info">
-                <h5>Illnesses</h5>
-                <p>{profileData.illness}</p>
-              </div>
-              <div className="info">
-                <h5>Adoption Date</h5>
-                <p>{profileData.adoption_date}</p>
-              </div>
-              <div className="info">
-                <h5>Pet Message</h5>
-                <p>{profileData.pet_message}</p>
+                {data && data.content ? (
+                  <>
+                    <h5>
+                      {data.content.name} {data.content.last_name}
+                    </h5>
+                    <p>{data.content.user_title}</p>
+                    <div className="info">
+                      <h5>Phone Number:</h5>
+                      <p>{data.content.phone_number}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Address</h5>
+                      <p>{data.content.address}</p>
+                    </div>
+                    <div className="info">
+                      <h5>E-mail Address</h5>
+                      <p>{data.content.email}</p>{" "}
+                      {/* E-posta adresi verisi bu şekilde gösterilebilir */}
+                    </div>
+                    <div className="info">
+                      <h5>Message</h5>
+                      <p>{data.content.user_message}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Pet Title</h5>
+                      <p>{petData.content.pet_title}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Pet Name</h5>
+                      <p>{petData.content.pet_name}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Legal Vaccines Completed ? </h5>
+                      <p>{petData.content.legal_vaccines}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Breed</h5>
+                      <p>{petData.content.pet_breed}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Illnesses</h5>
+                      <p>{petData.content.illness}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Adoption Date</h5>
+                      <p>{petData.content.adoption_date}</p>
+                    </div>
+                    <div className="info">
+                      <h5>Pet Message</h5>
+                      <p>{petData.content.pet_message}</p>
+                    </div>
+                  </>
+                ) : (
+                  <p>Loading...</p>
+                )}
               </div>
             </div>
             <div className="right-side-bottom">

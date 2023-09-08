@@ -41,10 +41,96 @@ $color-2:#FFFFFF;
   
 } 
 
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(128, 128, 128, 0.8);
+  
+}
 
 
  
+body{
+  
+    height: 100vh;
+    /* background-color: rgba(128, 128, 128, 0.1); */
+    display:flex ;
+   flex-direction: column;
 
+   font-family: $font;
+   
+   
+   
+   
+    .navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 24px 24px;
+    background-color: $toggle-color;
+  
+    
+  
+  .title{
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    font-size: 28px;
+    color: $secondary-color;
+
+    img{
+      width: 48px;
+      height: 48px;
+      margin-right: 16px;
+    }
+    
+  }
+  
+  .input{
+    display:flex ;
+    color: #23186F;
+  
+  ul{
+    display: flex;
+    align-items: center;
+   
+  li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+
+    a{
+      color: $secondary-color;
+      font-size: 16px;
+      
+    }
+   
+
+    
+    button{
+        border: none;
+        background-color:rgba(128, 128, 128, 0.1) ;
+        cursor: pointer;
+    }
+
+    a{
+      display: flex;
+      margin-right: 16px;
+      margin-left: 4px;
+      /* color: black; */
+      .img{
+        width: 32px;
+        height: 32px;
+      }
+    }
+    
+  }
+  
+  }  
+  
+  }
+  
+  }
 
 
     .main-top{
