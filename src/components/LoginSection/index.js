@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "../SignUp/formInput.css";
+/* import "../SignUp/formInput.css"; */
+import "./login.scss";
 import FormInput from "../SignUp/FormInput";
 import { Link } from "react-router-dom";
 import EditInformation from "../EditInformation";
@@ -96,7 +97,13 @@ const Login = () => {
   }, []);
 
   return (
+    
     <div className="login-panel">
+    <div className="background">
+          <img src={Background}></img>
+        </div>
+    
+    
     <div className='landing'>
       <img src={LoginImg}></img>
     </div>
@@ -111,7 +118,7 @@ const Login = () => {
       
      
     ) : (
-      
+      <div className="login-section">
       <form onSubmit={handleSubmit}>
       <div className="head-login">
             <h3>LOGIN</h3>
@@ -126,13 +133,15 @@ const Login = () => {
         ))}
         <button type="submit">Login</button>
         <div className="dont-have-account">
-          Already have an account?<Link to="/signup">Sign Up</Link>
+        Don’t have an account?<Link to="/signup">Sign Up</Link>
         </div>
       </form>
+      </div>
     )}
   </div>
   </div>
   </div>
+  
   );
 };
 

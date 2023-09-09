@@ -42,44 +42,7 @@ $font: 'Arimo', sans-serif;
 
 
 
-/* 
-    .main-top{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 120px;
 
- 
-      
-      .circle{
-        display: flex;
-        flex-direction: column;
-        margin-left:50px;
-        align-items: center;
-        button{
-          width: 30px;
-          height: 30px;
-          background-color: #D5F6EA;
-          border-radius: 50%;
-          display: flex;
-         border: none;
-         cursor: pointer;
-
-         display: flex;
-         align-items: center;
-         justify-content: center;
-
-         &:hover{
-         background-color:  #d5f6eabe;
-         }
-        }
-
-        p{
-          margin-top: 10px;
-        }
-      }
-    }
- */
     /* main top bitiş */
 
     .main-top{
@@ -107,8 +70,8 @@ $font: 'Arimo', sans-serif;
         
         align-items: center;
         button{
-          width: 36px;
-          height: 36px;
+          width: 48px;
+          height:48px;
           background-color: #97B2EB;
           border-radius: 6px;
           display: flex;
@@ -118,6 +81,8 @@ $font: 'Arimo', sans-serif;
          display: flex;
          align-items: center;
          justify-content: center;
+
+        
 
          
         }
@@ -174,19 +139,20 @@ $font: 'Arimo', sans-serif;
           height: 80px;
           border-radius: 12px;
           
-          background-color: #D5F6EA;
+          background-color: rgba(208, 222, 251, 0.93);
 
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-around;
 
-          color: #4831D4;
+          color: rgba(12, 42, 105, 1);
           
-          margin: 10px;
+          margin: 8px;
           font-size: 20px;
 
           cursor: pointer;
+          padding: 4px;
           
           img{
             width: 24px;
@@ -232,13 +198,9 @@ $font: 'Arimo', sans-serif;
         height: 400px;
         padding: 16px;
         display: flex;
-        flex-direction: column;
-      
-        
+        flex-direction: column; 
         border-radius: 16px;
-
-        background-color: #fff;
-        
+        background-color: #fff;  
         margin-bottom: auto;
        overflow-y: auto;
         
@@ -298,10 +260,6 @@ $font: 'Arimo', sans-serif;
           }
           
         }
-
-       /*  .button-active{
-          background-color: #3423A3;
-        } */
 
       }
     }

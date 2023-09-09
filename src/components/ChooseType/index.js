@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../ChooseType/style.scss";
-import personal from "../../images/icons/personal.svg";
+import personal from "../../images/icons/profile-card-white.svg";
 import app from "../../images/icons/app.svg";
 import business from "../../images/icons/business.svg";
 import event from "../../images/icons/event.svg";
@@ -16,6 +16,8 @@ import EditWhite from '../img/edit-white.svg'
 import Customize from '../img/customize-blue-2.svg'
 import Save from '../img/save-blue-2.svg'
 import Next from '../img/arrow-next.svg'
+import EditBlue from '../img/edit-blue-2.svg'
+import ChooseTypeWhite from '../img/choose-type-white.svg'
 
 const ChooseType = () => {
   const [data, setData] = useState({});
@@ -81,51 +83,12 @@ const ChooseType = () => {
 
   return (
     <div>
-       {/*  <div className="main-top">
-          <div className="circle">
-            <button>
-              <i className="fa-solid fa-users" style={{ color: "#4831d4" }} />
-              <i
-                className="fa-solid fa-layer-group"
-                style={{ color: "#4831d4" }}
-              />
-            </button>
-            <p>Choose Type</p>
-          </div>
-          <div className="circle">
-            <button>
-              <i
-                className="fa-solid fa-pen-to-square"
-                style={{ color: "#4831d4" }}
-              />
-            </button>
-            <p>Edit Information</p>
-          </div>
-          <div className="circle">
-            <button>
-              <i
-                className="fa-solid fa-wand-magic-sparkles"
-                style={{ color: "#4831d4" }}
-              />
-            </button>
-            <p>Customize</p>
-          </div>
-          <div className="circle">
-            <button>
-              <i
-                className="fa-solid fa-download"
-                style={{ color: "#4831d4" }}
-              />
-            </button>
-            <p>Download QR</p>
-          </div>
-        </div> */}
-
+    
         <div className="main-top">
       <div className="circle-container">
         <div className="circle">
-          <button className="active">
-            <img src={Done} alt />
+          <button className="current">
+            <img src={ChooseTypeWhite} alt />
           </button>
           <p>Choose Type</p>
         </div>
@@ -135,8 +98,8 @@ const ChooseType = () => {
         </div>
 
         <div className="circle">
-          <button className="current">
-            <img src={EditWhite} alt />
+          <button>
+            <img src={EditBlue} alt />
           </button>
           <p>Edit Information</p>
         </div>
@@ -258,31 +221,31 @@ const ChooseType = () => {
                     </div>
                     <div className="info">
                       <h5>Pet Title</h5>
-                      <p>{petData.content.pet_title}</p>
+                      <p>{data.content.pet_title}</p>
                     </div>
                     <div className="info">
                       <h5>Pet Name</h5>
-                      <p>{petData.content.pet_name}</p>
+                      <p>{data.content.pet_name}</p>
                     </div>
                     <div className="info">
                       <h5>Legal Vaccines Completed ? </h5>
-                      <p>{petData.content.legal_vaccines}</p>
+                      <p>{data.content.legal_vaccines}</p>
                     </div>
                     <div className="info">
                       <h5>Breed</h5>
-                      <p>{petData.content.pet_breed}</p>
+                      <p>{data.content.pet_breed}</p>
                     </div>
                     <div className="info">
                       <h5>Illnesses</h5>
-                      <p>{petData.content.illness}</p>
+                      <p>{data.content.illness}</p>
                     </div>
                     <div className="info">
                       <h5>Adoption Date</h5>
-                      <p>{petData.content.adoption_date}</p>
+                      <p>{data.content.adoption_date}</p>
                     </div>
                     <div className="info">
                       <h5>Pet Message</h5>
-                      <p>{petData.content.pet_message}</p>
+                      <p>{data.content.pet_message}</p>
                     </div>
                   </>
                 ) : (
