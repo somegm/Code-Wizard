@@ -9,8 +9,8 @@ import Polygon from '../../images/customize/Polygon-1.svg'
 
 const Customize = () => {
 return(
-        <div>
-            <div class="main-top">
+    <div>
+        <div class="main-top">
 
     <div class="circle-container">
     <div class="circle">
