@@ -3,7 +3,7 @@ import "../SignUp/formInput.scss";
 import FormInput from "../SignUp/FormInput";
 import {Link} from "react-router-dom"
 import Signimg from './signupimg.svg'
-import Background from './backgroundimg.svg'
+import Background from '../img/background-img.svg'
 
 
 

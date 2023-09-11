@@ -11,6 +11,9 @@ import EditInformation from "./components/EditInformation/index.js";
 import Save from "./components/Save/index.js";
 import MyProfile from "./components/MyProfile/index.js";
 //import MyProfile from "./components/MyProfile/index.js";
+import MyProfileDashboard from "./components/MyProfileDashboard/index.js";
+
+
 
 {/* <Route exact path="/signup" Component={SignUp} />
 <Route exact path="/login" Component={Login} />
@@ -23,7 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route index element={<Navbar/>}></Route>
-        <Route path="/edit" element={<MyProfile/>}></Route>
+        <Route path="/edit" element={<MyProfileDashboard/>}></Route>
 
       </Routes>
     </Router>

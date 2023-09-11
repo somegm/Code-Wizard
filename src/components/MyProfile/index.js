@@ -1,13 +1,14 @@
 
 import "./profile.scss"
+import UserImg from "../img/ellipse-4.svg"
 
 const MyProfile = () => {
     return(
-        <div>
+    <div>
             
-                <div class="main-center">
+        <div class="main-center">
 
-            <div class="right-side">
+        <div class="right-side">
             <div class="right-side-top">
                 <h5>Connecting Lost Pets to Their Loving Homes</h5>
                 <p>This pet may be lost, to contact the owner and see the information about this pet, please refer to the information below.</p> 
@@ -18,17 +19,14 @@ const MyProfile = () => {
 
             <div className="user-container">
                 <div class="profile">
-                    <img src="/img/Ellipse-4.svg" alt=""></img>
-               {/*  </div>
-
-                <div class="name"> */}
+                    <img src={UserImg}/>
                     <h5>John Doe</h5>
                     <p>Owner of Fluffy</p>
                 </div>
             </div>
 
                 <div class="info">
-                <h6>John’s Message:</h6> 
+                <h5>John’s Message:</h5> 
                 <p> If you found my dog, please contact me from the information below! Thank you! </p>
             </div>
                 <div class="info">
