@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/index.js";
  import Login from "./components/LoginSection/index"
  import SignUp from "./components/SignUp/index.js";
-// import Info from "./components/InfoSection/index.js";
+ import Info from "./components/InfoSection/index.js";
 // import ChooseType from "./components/ChooseType/index.js";
 //import EditInformation from "./components/EditInformation/index.js";
 import ChooseType from "./components/ChooseType/index.js";
@@ -26,7 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route index element={<Navbar/>}></Route>
-        <Route path="/edit" element={<MyProfileDashboard/>}></Route>
+        <Route path="/edit" element={<EditInformation/>}></Route>
 
       </Routes>
     </Router>
