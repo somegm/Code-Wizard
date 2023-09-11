@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../SignUp/formInput.css";
+import "../SignUp/formInput.scss";
 import FormInput from "../SignUp/FormInput";
 import {Link} from "react-router-dom"
 import Signimg from './signupimg.svg'
@@ -94,10 +94,12 @@ const SignUp = () => {
 
   return (
     <div className="sign-contain">
-      <img className="background" src={Background}></img>
-      <div className='img'>
+      
+      
+      <img className="background" src={Background} />
       <div className="landing-container">
-        <img className='heroImage' src={Signimg}></img>
+        <img className='heroImage' src={Signimg} />
+       {/*  <Signimg /> */}
         <h2 className='titleWel'>Welcome!</h2>
         </div>
     <div className="app">
@@ -121,7 +123,7 @@ const SignUp = () => {
       </form>
     </div>
     </div>
-    </div>
+   
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../ChooseType/style.scss";
+import "../ChooseType/choosetype.scss";
 import personal from "../../images/icons/profile-card-white.svg";
 import app from "../../images/icons/app.svg";
 import business from "../../images/icons/business.svg";

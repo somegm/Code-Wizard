@@ -34,27 +34,23 @@ $shadow-1:rgba(37, 99, 235, 0.25);
     
 
     .background{
-        margin-left: 300px;
         z-index: -1;
-        height: calc(100vh - 70px);
         position: absolute;
     }
     
   
   }
   
-  .img{
-    display: flex;
-    max-width: 1036px;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
+ 
+  
     
   .landing-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    max-width: 1036px;
+    width: 100%;
     .titleWel{
         font-size:32px;
         font-weight: 700;
@@ -132,7 +128,7 @@ $shadow-1:rgba(37, 99, 235, 0.25);
       }
     }
   }
-  }
+
 
 
 

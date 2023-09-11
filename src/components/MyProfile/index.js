@@ -1,0 +1,109 @@
+
+import "./profile.scss"
+
+const MyProfile = () => {
+    return(
+        <div>
+            
+                <div class="main-center">
+
+            <div class="right-side">
+            <div class="right-side-top">
+                <h5>Connecting Lost Pets to Their Loving Homes</h5>
+                <p>This pet may be lost, to contact the owner and see the information about this pet, please refer to the information below.</p> 
+            </div>
+
+
+            <div class="right-side-center">
+
+            <div className="user-container">
+                <div class="profile">
+                    <img src="/img/Ellipse-4.svg" alt=""></img>
+               {/*  </div>
+
+                <div class="name"> */}
+                    <h5>John Doe</h5>
+                    <p>Owner of Fluffy</p>
+                </div>
+            </div>
+
+                <div class="info">
+                <h6>John’s Message:</h6> 
+                <p> If you found my dog, please contact me from the information below! Thank you! </p>
+            </div>
+                <div class="info">
+                    <h5>Phone Number</h5>
+                    <p>+91919191</p>
+                </div>
+                
+
+                <div class="info">
+                    <h5>Address</h5>
+                    <p>Purrington, PAW 12345</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>E-mail Address</h5>
+                    <p>johndoe@outlook.com</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>Address</h5>
+                    <p>Purrington, PAW 12345</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>E-mail Address</h5>
+                    <p>johndoe@outlook.com</p>
+                </div>
+
+                <div class="info">
+                    <h5>Address</h5>
+                    <p>Purrington, PAW 12345</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>E-mail Address</h5>
+                    <p>johndoe@outlook.com</p>
+                </div>
+
+                <div class="info">
+                    <h5>Address</h5>
+                    <p>Purrington, PAW 12345</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>E-mail Address</h5>
+                    <p>johndoe@outlook.com</p>
+                </div>
+
+                <div class="info">
+                    <h5>Address</h5>
+                    <p>Purrington, PAW 12345</p>
+                </div>
+
+
+                <div class="info">
+                    <h5>E-mail Address</h5>
+                    <p>johndoe@outlook.com</p>
+                </div>
+            
+
+            </div>
+
+
+
+            </div>
+
+            </div>
+
+        </div>
+    )
+}
+
+export default MyProfile

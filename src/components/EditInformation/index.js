@@ -437,8 +437,8 @@ const EditInformation = () => {
                 />
               </div>
               <div className="update-button">
-                <button>Add New Pet</button>
-                <button onClick={handleSubmit}>Submit</button>
+                <button className="button-click">Add New Pet</button>
+                <button className="button-click" onClick={handleSubmit}>Submit</button>
               </div>
             </div>
           </div>
