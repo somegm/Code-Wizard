@@ -26,7 +26,7 @@ $shadow-1:rgba(37, 99, 235, 0.25);
     width: 100%;
     display: flex;
     align-items: center;
-  justify-content: space-around;
+  justify-content: center;
     height: calc(100vh - 70px);
     background-color: $white;
     position: relative;
@@ -34,7 +34,8 @@ $shadow-1:rgba(37, 99, 235, 0.25);
     
 
     .background{
-      height: 100%;
+        margin-left: 150px;
+        height: 100%;
         z-index: -1;
         position: absolute;
     }
@@ -43,18 +44,22 @@ $shadow-1:rgba(37, 99, 235, 0.25);
   }
   
  
-  
+
+ 
     
   .landing-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-   /*  max-width: 1036px;
-    width: 100%; */
+  
     .titleWel{
         font-size:32px;
         font-weight: 700;
+        background: linear-gradient(90deg, #0C2A69 -11.95%, rgba(37, 99, 235, 0.90) 75.49%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
   }
   
@@ -67,6 +72,7 @@ $shadow-1:rgba(37, 99, 235, 0.25);
     width: 100%;
     max-height: 520px;
     height: 100%;
+    margin-left: 32px;
 
    
     
@@ -130,6 +136,7 @@ $shadow-1:rgba(37, 99, 235, 0.25);
       }
     }
   }
+
 
 
 

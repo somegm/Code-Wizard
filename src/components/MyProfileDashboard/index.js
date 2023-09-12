@@ -34,54 +34,19 @@ const MyProfileDashboard = () => {
               </div>
 
               <div class="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
-              </div>
-
-              <div class="info">
                 <h5>E-mail Address</h5>
                 <p>johndoe@outlook.com</p>
               </div>
 
-              <div class="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
-              </div>
-
-              <div class="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
-              </div>
 
               <div class="info">
                 <h5>Address</h5>
                 <p>Purrington, PAW 12345</p>
               </div>
 
-              <div class="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
-              </div>
 
-              <div class="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
-              </div>
 
-              <div class="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
-              </div>
 
-              <div class="info">
-                <h5>Address</h5>
-                <p>Purrington, PAW 12345</p>
-              </div>
-
-              <div class="info">
-                <h5>E-mail Address</h5>
-                <p>johndoe@outlook.com</p>
-              </div>
             </div>
           </div>
 

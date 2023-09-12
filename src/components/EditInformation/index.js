@@ -217,9 +217,9 @@ const EditInformation = () => {
               </button>
               <div className="upload-img">
 
-              <img src={Upload}></img>
-              <input className="file-input" type="file">
-              </input>
+              <img  src={Upload}></img>
+              <input className="file-input" type="file"/>
+             
               </div>
             </div>
             <div className="account">

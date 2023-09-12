@@ -93,17 +93,16 @@ const SignUp = () => {
   };
 
   return (
-    <div className="sign-contain">
+  <div className="sign-contain">
       
       
       <img className="background" src={Background} />
+    
       <div className="landing-container">
         <img className='heroImage' src={Signimg} />
-       {/*  <Signimg /> */}
         <h2 className='titleWel'>Welcome!</h2>
         </div>
     <div className="app">
-    
       <form onSubmit={handleSubmit}>
       <div className="head-sign">
             <h1>SIGN UP</h1>
@@ -122,7 +121,8 @@ const SignUp = () => {
         </div>
       </form>
     </div>
-    </div>
+  
+</div>
    
   );
 };

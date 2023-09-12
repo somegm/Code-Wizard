@@ -8,13 +8,14 @@ const InfoSection = () => {
 
     
    <div className='info-container'>
-
+      
    <div className='background'>
       <img src={Background}></img>
    
     
       <div className='info-slogan'>
-      <h3>QR Codes Reimagined: One App, Countless Possibilities</h3>
+      <h3>QR Codes Reimagined: <br/>
+      One App, Countless Possibilities</h3>
       <p>Step into a realm of QR code magic that's anything but ordinary! Our app simply turns information into QR codes. Generate QR codes for your wildest ideas – from creating pets profile cards to events.</p>
       <button className='get-start'>Get Started</button>
 

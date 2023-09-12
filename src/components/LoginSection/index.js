@@ -9,6 +9,9 @@ import Background from '../SignUp/backgroundimg.svg'
 import LoginImg from './LoginPageImg.svg'
 
 
+
+
+
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
@@ -96,6 +99,8 @@ const Login = () => {
     }
   }, []);
 
+
+
   return (
     
     <div className="login-panel">
@@ -131,7 +136,10 @@ const Login = () => {
             onChange={onChange}
           />
         ))}
+
         <button type="submit">Login</button>
+     
+
         <div className="dont-have-account">
         Don’t have an account?<Link to="/signup">Sign Up</Link>
         </div>

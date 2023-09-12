@@ -7,7 +7,6 @@ $bck-2:#C7F50F;
 $border-1:#CEFDD7;
 $border-2:#2563EB;
 $title-1:#FFFFFF;
-
 $color-1:#1E0582;
 $color-2:#1147BC;
 
@@ -53,6 +52,10 @@ $color-2:#1147BC;
   
   .input{
     display:flex ;
+
+    .switch{
+      background-color: red;
+    }
    
   
   ul{
@@ -63,8 +66,17 @@ $color-2:#1147BC;
     justify-content: space-around;
     
     
+    li{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    }
     
-    
+    .sign-up{
+      background-color: $color-2;
+      color: $title-1;
+    }
+
     button{
       max-width: 100px;
         width: 100%;
@@ -75,7 +87,7 @@ $color-2:#1147BC;
         outline: none;
         
         background-color:$title-1 ;
-        color: $color-1;
+        color: $border-2;
         font-family: $font;
         font-weight: 700;
         font-size: 16px;
@@ -91,10 +103,7 @@ $color-2:#1147BC;
         border-radius: 12px;
 
 
-      &:hover{
-        background-color: $color-2;
-        color: $title-1;
-      }
+   
 
       
 
