@@ -131,7 +131,7 @@ const ChooseType = () => {
 
         {/* main top bitiş */}
 
-        <div className="main-center">
+        <div className="main-center-choose">
           <div className="left-side-container">
             <h5>Choose Your QR Code Type</h5>
             <div className="left-side">
@@ -187,9 +187,9 @@ const ChooseType = () => {
               </button>
             </div>
           </div>
-          <div className="right-side">
+          <div className="right-side-choose">
             <div className="right-side-top">
-              <h5>Preview</h5>
+              <h5 className="right-side-header">Preview</h5>
             </div>
             <div className="right-side-center">
               <div className="profile">
@@ -254,7 +254,7 @@ const ChooseType = () => {
               </div>
             </div>
             <div className="right-side-bottom">
-              <button>Previous</button>
+              <button className="type-previous">Previous</button>
               <button>Next</button>
             </div>
           </div>

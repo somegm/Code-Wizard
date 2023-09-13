@@ -65,7 +65,7 @@ $color-2:#FFFFFF;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 120px;
+      /* height: 120px; */
      
 
       .circle-container{
@@ -85,8 +85,8 @@ $color-2:#FFFFFF;
         
         align-items: center;
         button{
-          width: 36px;
-          height: 36px;
+          width: 56px;
+          height: 56px;
           background-color: $color-1;
           border-radius: 6px;
           display: flex;
@@ -157,7 +157,7 @@ $color-2:#FFFFFF;
         
         box-shadow: 0px 0px 16px 0px rgba(1, 37, 70, 0.10);
         border-radius: 16px;
-        display:flex ;
+        
 
        
 
@@ -596,7 +596,7 @@ $color-2:#FFFFFF;
 
     
 
-      .right-side{
+      .right-side-edit{
         height: 492px;
         display:flex;
         flex-direction: column;
@@ -606,23 +606,23 @@ $color-2:#FFFFFF;
         
 
 
-      .right-side-top{
+      .right-side-top-edit{
         display: flex;
         justify-content: flex-end;
         
         margin-bottom: 12px;
 
-        .right-top-title{
+        .right-top-title-edit{
           font-size: 20px;
         }
       }
 
       
 
-      .right-side-center{
+      .right-side-center-edit{
         width: 300px;
         height: 400px;
-        padding: 16px;
+       /*  padding: 16px; */
         display: flex;
         flex-direction: column;
       
@@ -644,6 +644,7 @@ $color-2:#FFFFFF;
         .profile{
           display: flex;
           justify-content: center;
+          background-color: rgba(208, 222, 251, 0.93);
           
 
           
@@ -653,13 +654,14 @@ $color-2:#FFFFFF;
           height:52px;
           border-radius: 50%;
           display: flex;
+          margin: 16px;
           justify-content: center;
           background-color: skyblue;
         }
       }
 
       .info{
-       margin-top: 12px;
+        margin: 16px 16px 0 16px;
        
       }
       }

@@ -445,13 +445,13 @@ const EditInformation = () => {
           {/*  */}
         </div>
         </div>
-        <div className="right-side">
-          <div className="right-side-top">
-            <h5 className="right-top-title">Preview</h5>
+        <div className="right-side-edit">
+          <div className="right-side-top-edit">
+            <h5 className="right-top-title-edit">Preview</h5>
           </div>
-          <div className="right-side-center">
+          <div className="right-side-center-edit">
             <div className="profile">
-              <img src={RandomUser} alt />
+              <img src={""} alt />
             </div>
             <div className="name">
               <h5>
