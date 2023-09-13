@@ -5,7 +5,7 @@ import ArrowNext from '../../images/customize/arrow-next-2.svg'
 import DoneWhite from '../img/done-white.svg'
 import SaveWhite from '../img/save-white-2.svg'
 import QrCode from '../../images/customize/qrcode.svg'
-import Polygon from '../../images/customize/Polygon-1.svg'
+import Polygon from '../img/triangle-black.svg'
 
 
 
@@ -14,7 +14,7 @@ const Save = () =>{
     return(
 
     <div>
-        <div class="main-top">
+        <div class="main-top-save">
 
     <div class="circle-container">
     <div class="circle">
@@ -59,7 +59,7 @@ const Save = () =>{
     </div>
     </div>
 
-    <div class="main-center">
+    <div class="main-center-save">
 
 
     <div class="show-qr">
@@ -72,7 +72,7 @@ const Save = () =>{
     </div>
         </div>
         <div class="steps">
-            <button>Previous</button>
+            <button className="save-previous">Previous</button>
             <button>Save</button>
         </div>
         <div class="download">

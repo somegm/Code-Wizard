@@ -7,7 +7,7 @@ $color-2:#FFFFFF;
 $color-3:#23186F;
 $color-4:rgba(151, 178, 235, 1);
 $color-5:#2C08BE;
-$color-6:#8EFAA4;
+$color-6:#1F1F28;
 $bck-1:#3D0FF5;
 $bck-2:rgba(128, 128, 128, 0.1);
 $shadow-1:rgba(39, 34, 71, 0.10);
@@ -24,7 +24,7 @@ $shadow-1:rgba(39, 34, 71, 0.10);
 
 
 
-.main-top{
+.main-top-save{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,9 +86,9 @@ $shadow-1:rgba(39, 34, 71, 0.10);
   }
   }
 
-  .main-center{
+  .main-center-save{
     width: 100%;
-    
+    height: calc(100vh - 170px);
   
     display: flex;
     justify-content: center;
@@ -99,8 +99,8 @@ $shadow-1:rgba(39, 34, 71, 0.10);
   .show-qr{
     display: flex;
     flex-direction: column;
-   /*  justify-content: center; */
-  /*   align-items: center; */
+  height: 400px;
+  margin-top: 24px;
    
 
     .title{
@@ -110,7 +110,7 @@ $shadow-1:rgba(39, 34, 71, 0.10);
       font-size: 20px;
       color: $color-1;
       margin-bottom: 12px;
-      font-weight: 400;
+      font-weight: 700;
     }
     
     .qr-container{
@@ -167,6 +167,13 @@ $shadow-1:rgba(39, 34, 71, 0.10);
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      .save-previous{
+        background-color: $color-2;
+        color: #2563EB;
+        border: 1px solid #2563EB;
+        font-weight: 400;
+        
+      }
       button{
         padding: 12px 24px;
         border-radius: 12px;
@@ -174,6 +181,7 @@ $shadow-1:rgba(39, 34, 71, 0.10);
         background-color: $color-5;
         color: $color-2;
         cursor: pointer;
+        font-weight: 700;
       }
     }
 
@@ -186,7 +194,7 @@ $shadow-1:rgba(39, 34, 71, 0.10);
           display: flex;
           align-items: center;
           justify-content: center;
-      
+          font-weight: 700;
         padding: 12px 60px;
         border-radius: 12px;
         border: 1px solid $bck-1;

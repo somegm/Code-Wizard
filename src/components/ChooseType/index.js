@@ -18,6 +18,7 @@ import Save from '../img/save-blue-2.svg'
 import Next from '../img/arrow-next.svg'
 import EditBlue from '../img/edit-blue-2.svg'
 import ChooseTypeWhite from '../img/choose-type-white.svg'
+import { Navigate } from "react-router-dom";
 
 const ChooseType = () => {
   const [data, setData] = useState({});
@@ -81,10 +82,12 @@ const ChooseType = () => {
     petFetchData();
   }, []);
 
+
+
   return (
     <div>
     
-        <div className="main-top">
+        <div className="main-top-choose">
       <div className="circle-container">
         <div className="circle">
           <button className="current">

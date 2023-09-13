@@ -159,7 +159,7 @@ const EditInformation = () => {
   return (
     <div className="main-container">
  
-      <div className="main-top">
+      <div className="main-top-edit">
       <div className="circle-container">
         <div className="circle">
           <button className="active">
@@ -437,7 +437,7 @@ const EditInformation = () => {
                 />
               </div>
               <div className="update-button">
-                <button className="button-click">Add New Pet</button>
+                <button className="button-click-add ">Add New Pet</button>
                 <button className="button-click" onClick={handleSubmit}>Submit</button>
               </div>
             </div>
@@ -510,7 +510,7 @@ const EditInformation = () => {
 
           </div>
           <div className="right-side-bottom">
-            <button>Previous</button>
+            <button className="edit-previous">Previous</button>
             <button className="button-active">Next</button>
           </div>
         </div>

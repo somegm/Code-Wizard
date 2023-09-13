@@ -5,7 +5,7 @@ import ArrowNext from '../../images/customize/arrow-next-2.svg'
 import CustomizeWhite from '../../images/customize/customize-white.svg'
 import SaveBlue from '../../images/customize/save-blue.svg'
 import QrCode from '../../images/customize/qrcode.svg'
-import Polygon from '../../images/customize/Polygon-1.svg'
+import Polygon from '../img/triangle-black.svg'
 
 const Customize = () => {
 return(
@@ -55,7 +55,7 @@ return(
     </div>
     </div>
 
-    <div class="main-center">
+    <div class="main-center-customize">
     <div class="custom-contain">
         <p>Customize Your QR</p>
 
@@ -82,15 +82,17 @@ return(
     </div>
     </div>
 
-    <div class="show-qr">
+    <div class="show-qr-customize">
         <p class="title">Preview</p>
+        <div className="custom-qr-container">
         <img src={QrCode}></img>
         <div class="message">
             <img src={Polygon}></img>
         <p>You found my dog!</p>
         </div>
+        </div>
         <div class="steps">
-            <button>Previous</button>
+            <button className="customize-previous">Previous</button>
             <button>Next</button>
         </div>
     </div>
