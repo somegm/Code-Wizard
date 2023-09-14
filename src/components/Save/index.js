@@ -76,7 +76,7 @@ const Save = () => {
             <button onClick={() => navigate("/myprofile")}>Save</button>
           </div>
           <div class="download">
-            <button onClick={() => navigate("/profile")}>Display QR</button>
+            <button  onClick={() => navigate("/download")}>Download QR</button>
           </div>
         </div>
       </div>
