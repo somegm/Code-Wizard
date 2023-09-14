@@ -5,7 +5,7 @@ import "./customize.scss";
 
 import DoneWhite from "../../images/customize/done-white.svg";
 import ArrowNext from "../../images/customize/arrow-next-2.svg";
-import CustomizeWhite from "../../images/customize/customize-white.svg";
+import CustomizeWhite from "../../images/customize/customize-white-key.svg";
 import SaveBlue from "../../images/customize/save-blue.svg";
 import QrCode from "../../images/customize/qrcode.svg";
 import Polygon from "../img/triangle-black.svg";
