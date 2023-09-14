@@ -32,7 +32,7 @@ const Navbar = ({ isLoggedIn }) => {
                 <img src={accountWhite} />
                 <a href="">Dashboard</a>
               </li>
-              <li onClick={() => navigate("/settings")}>
+              <li onClick={() => navigate("/edit")}>
                 <img src={settingsWhite} />
                 <a href="">Settings</a>
               </li>
