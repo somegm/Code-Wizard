@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 /* import "../SignUp/formInput.css"; */
 import "./login.scss";
 import FormInput from "../SignUp/FormInput";
@@ -7,19 +8,27 @@ import EditInformation from "../EditInformation";
 import ChooseType from "../ChooseType";
 import Background from '../SignUp/backgroundimg.svg'
 import LoginImg from './LoginPageImg.svg'
+import SignUp from "../SignUp";
 
 
 
 
 
-const Login = () => {
+
+
+
+const Login = ({
+  setIsLoggedIn,
+  isLoggedIn
+}) => {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const [user_token, setUserToken] = useState(""); // Token'i saklamak için kullanılacak state
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Kullanıcının oturum açık olup olmadığını izlemek için kullanılan state
+  // const [isLoggedIn, setIsLoggedIn] = useState(false); // Kullanıcının oturum açık olup olmadığını izlemek için kullanılan state
 
   const inputs = [
     {
@@ -62,6 +71,7 @@ const Login = () => {
           setIsLoggedIn(true); // Kullanıcı oturum açtı
           console.log("Giriş başarılı. Token:");
           console.log(data) // Token'i console'da gösterme
+          navigate("/choosetype");
         } else {
           // Başarısız giriş
 
@@ -100,21 +110,31 @@ const Login = () => {
   }, []);
 
 
+  
 
   return (
     
+    
     <div className="login-panel">
+
+
+
+{isLoggedIn && (
+  
     <div className="background">
           <img src={Background}></img>
         </div>
+        )}
     
-    
-    <div className='landing'>
-      <img src={LoginImg}></img>
-    </div>
+        {isLoggedIn && (
+      
+      <div className='landing'>
+        <img src={LoginImg}></img>
+      </div>
+    )}
   <div className='login-main'>
     <div className="app">
-    {isLoggedIn ? (
+    {!isLoggedIn ? (
         //  <div>
         //      <button onClick={handleLogout}>logout</button>
         //  </div>

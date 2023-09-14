@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar/index.js";
 import Info from "./components/InfoSection/index.js";
@@ -20,15 +21,20 @@ import MyProfile from "./components/MyProfile/index.js";
 );     {/*   <Routes>*/}
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+
+  console.log({isLoggedIn})
+
   return (
     
     <Router>
-    <Navbar/>
+    <Navbar isLoggedIn={isLoggedIn}/>
       <Routes>
       {/*   <Route index element={}></Route> */}
-        <Route path="/info" element={<Info/>}></Route>
-        <Route path="/signup" element={<SignUp/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/info" element={<Info setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />}></Route>
+        <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />}></Route>
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />}></Route>
         <Route path="/myprofile" element={<MyProfileDashboard/>}></Route>
         <Route path="/choosetype" element={<ChooseType/>}></Route>
         <Route path="/edit" element={<EditInformation/>}></Route>

@@ -115,13 +115,36 @@ $color-2:#FFFFFF;
       display: flex;
       /* height: calc(100vh - 190px); */
       justify-content:center;
-  
+      
 
-      padding: 16px;
+      padding: 16px 16px 0 16px;
      
      .left-side-container{
       display: flex;
       flex-direction: column;
+
+      .right-side-bottom{
+        display: flex;
+        justify-content: flex-end;
+
+        button{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 12px;
+
+
+          height: 42px;
+          margin-left: 20px;
+          padding: 12px 24px;
+          margin-top: 8px;
+          background-color: #1147BC;
+          color: $color-2;
+
+          cursor: pointer;
+        }
+      }
       
       
 
@@ -143,36 +166,27 @@ $color-2:#FFFFFF;
         box-shadow: 0px 0px 16px 0px rgba(0, 43, 137, 0.25);
         
         button{
-          width: 250px;
-          height: 80px;
+          width: 232px;
+          height: 72px;
           border-radius: 12px;
-          
           background-color: rgba(208, 222, 251, 0.93);
-
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-around;
-
-          color: rgba(12, 42, 105, 1);
-          
+          color: rgba(12, 42, 105, 1);         
           margin: 8px;
           font-size: 20px;
-
           cursor: pointer;
-          padding: 4px;
-          
+          padding: 4px;         
           img{
             width: 24px;
-            height: 24px;
-            
+            height: 24px;           
           }
 
           p{
             font-size: 14px;
           }
-        
-
         }  
         
         .chosen-button{
@@ -226,8 +240,11 @@ $color-2:#FFFFFF;
        .name{
         display: flex;
         flex-direction: column;
-        align-items: center;
         margin-top: 10px;
+
+        .user-name{
+          text-align: center;
+        }
        }
         
         .profile{
@@ -279,7 +296,7 @@ $color-2:#FFFFFF;
           height: 42px;
           margin-left: 20px;
           padding: 12px 24px;
-          background-color: rgba(17, 71, 188, 1);
+          background-color: #1147BC;
           color: #fff;
 
           cursor: pointer;

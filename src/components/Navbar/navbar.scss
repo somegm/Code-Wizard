@@ -63,13 +63,14 @@ $color-2:#1147BC;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     
     
     li{
       display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 16px;
     }
     
     .sign-up{
@@ -102,6 +103,7 @@ $color-2:#1147BC;
         border: 1px solid $border-2;
         border-radius: 12px;
 
+        margin-left: 16px;
 
    
 

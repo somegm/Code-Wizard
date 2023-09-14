@@ -678,13 +678,14 @@ $color-2:#FFFFFF;
           
         
         img{
-          width: 52px;
+          width:52px;
           height:52px;
           border-radius: 50%;
           display: flex;
           margin: 16px;
           justify-content: center;
-          background-color: skyblue;
+          background-color: #2563EB;
+          padding: 8px;
         }
       }
 
@@ -717,7 +718,7 @@ $color-2:#FFFFFF;
           height: 42px;
           margin-left: 20px;
           padding: 16px;
-          background-color: #3423A3;
+          background-color: #1147BC;
           color: $color-2;
 
           cursor: pointer;

@@ -18,11 +18,13 @@ import Save from '../img/save-blue-2.svg'
 import Next from '../img/arrow-next.svg'
 import EditBlue from '../img/edit-blue-2.svg'
 import ChooseTypeWhite from '../img/choose-type-white.svg'
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const ChooseType = () => {
   const [data, setData] = useState({});
   const [petData, setPetData] = useState({});
+  const navigate = useNavigate();
+
   console.log(data)
   //token degiskeni
   let userToken = localStorage.getItem("user_token");
@@ -188,79 +190,18 @@ const ChooseType = () => {
                 Event
                 <p>Event</p>
               </button>
+        
+            </div>
+            
+            <div className="right-side-bottom">
+              <button onClick={()=>navigate("/edit")}>Next</button>
             </div>
           </div>
           <div className="right-side-choose">
-            <div className="right-side-top">
-              <h5 className="right-side-header">Preview</h5>
-            </div>
-            <div className="right-side-center">
-              <div className="profile">
-                <img src="/img/Ellipse 4.svg" alt="" />
-              </div>
-              <div className="name">
-                {data && data.content ? (
-                  <>
-                    <h5>
-                      {data.content.name} {data.content.last_name}
-                    </h5>
-                    <p>{data.content.user_title}</p>
-                    <div className="info">
-                      <h5>Phone Number:</h5>
-                      <p>{data.content.phone_number}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Address</h5>
-                      <p>{data.content.address}</p>
-                    </div>
-                    <div className="info">
-                      <h5>E-mail Address</h5>
-                      <p>{data.content.email}</p>{" "}
-                      {/* E-posta adresi verisi bu şekilde gösterilebilir */}
-                    </div>
-                    <div className="info">
-                      <h5>Message</h5>
-                      <p>{data.content.user_message}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Pet Title</h5>
-                      <p>{data.content.pet_title}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Pet Name</h5>
-                      <p>{data.content.pet_name}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Legal Vaccines Completed ? </h5>
-                      <p>{data.content.legal_vaccines}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Breed</h5>
-                      <p>{data.content.pet_breed}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Illnesses</h5>
-                      <p>{data.content.illness}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Adoption Date</h5>
-                      <p>{data.content.adoption_date}</p>
-                    </div>
-                    <div className="info">
-                      <h5>Pet Message</h5>
-                      <p>{data.content.pet_message}</p>
-                    </div>
-                  </>
-                ) : (
-                  <p>Loading...</p>
-                )}
-              </div>
-            </div>
-            <div className="right-side-bottom">
-              <button className="type-previous">Previous</button>
-              <button>Next</button>
-            </div>
+           
+           
           </div>
+          
         </div>
         </div>
 

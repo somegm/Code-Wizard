@@ -9,8 +9,11 @@ import UploadImg from '../img/account-img.svg'
 import PetImg from '../img/pet-img.svg'
 import Next from '../img/arrow-next.svg'
 import RandomUser from '../img/RandomUser.svg'
+import { useNavigate } from "react-router-dom";
 
 const EditInformation = () => {
+  const navigate = useNavigate();
+
   // User kısmı bilgileri
   const [user_title, setTitle] = useState("");
   const [name, setName] = useState("");
@@ -161,7 +164,7 @@ const EditInformation = () => {
  
       <div className="main-top-edit">
       <div className="circle-container">
-        <div className="circle">
+        <div onClick={()=>navigate("/choosetype")} className="circle">
           <button className="active">
             <img src={Done} alt />
           </button>
@@ -172,7 +175,7 @@ const EditInformation = () => {
             <img src={Next} ></img>
         </div>
 
-        <div className="circle">
+        <div onClick={()=>navigate("/edit")} className="circle">
           <button className="current">
             <img src={EditWhite} alt />
           </button>
@@ -183,7 +186,7 @@ const EditInformation = () => {
             <img src={Next} ></img>
         </div>
   
-        <div className="circle">
+        <div onClick={()=>navigate("/customize")} className="circle">
           <button>
             <img src={Customize} alt />
           </button>
@@ -194,7 +197,7 @@ const EditInformation = () => {
             <img src={Next} ></img>
         </div>
 
-        <div className="circle">
+        <div onClick={()=>navigate("/save")} className="circle">
           <button>
             <img src={Save} alt />
           </button>
@@ -266,7 +269,7 @@ const EditInformation = () => {
                 onChange={handleInputChange}
               />
               <div className="toggle">
-              <p>Hide</p>
+              <p>Show</p>
                 <input
                   type="checkbox"
                   id="switch-3"
@@ -274,7 +277,7 @@ const EditInformation = () => {
                   onChange={togglePhoneVisibility}
                 />
                 <label htmlFor="switch-3">Toggle</label>
-                <p>Show</p>
+                <p>Hide</p>
               </div>
             </div>
             <div className="account">
@@ -289,7 +292,7 @@ const EditInformation = () => {
                 
               />
               <div className="toggle">
-              <p>Hide</p>
+              <p>Show</p>
                 <input
                   type="checkbox"
                   id="switch-4"
@@ -297,7 +300,7 @@ const EditInformation = () => {
                   onChange={toggleEmailVisibility}
                 />
                 <label htmlFor="switch-4">Toggle</label>
-                <p>Show</p>
+                <p>Hide</p>
               </div>
             </div>
             <div className="account">
@@ -311,7 +314,7 @@ const EditInformation = () => {
                 onChange={handleInputChange}
               />
               <div className="toggle">
-              <p>Hide</p>
+              <p>Show</p>
                 <input
                   type="checkbox"
                   id="switch-5"
@@ -319,7 +322,7 @@ const EditInformation = () => {
                   onChange={toggleVisibility}
                 />
                 <label htmlFor="switch-5">Toggle</label>
-                <p>Show</p>
+                <p>Hide</p>
               </div>
             </div>
             <div className="account">
@@ -451,7 +454,7 @@ const EditInformation = () => {
           </div>
           <div className="right-side-center-edit">
             <div className="profile">
-              <img src={""} alt />
+            <img src={UploadImg} alt />
             </div>
             <div className="name">
               <h5>
@@ -510,8 +513,8 @@ const EditInformation = () => {
 
           </div>
           <div className="right-side-bottom">
-            <button className="edit-previous">Previous</button>
-            <button className="button-active">Next</button>
+            <button onClick={()=>navigate("/choosetype")} className="edit-previous">Previous</button>
+            <button onClick={()=>navigate("/customize")}>Next</button>
           </div>
         </div>
       </div>
