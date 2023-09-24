@@ -6,6 +6,8 @@
 ![3](https://github.com/ertugrulsak/Code-Wizard/assets/110829506/eba7bbf8-8ec2-42bf-a9af-b6d2c6ecdcab)
 
 ![4](https://github.com/ertugrulsak/Code-Wizard/assets/110829506/d3cd0ab2-faa0-480d-9b61-3aa1b26455bf)
+![image](https://github.com/ertugrulsak/Code-Wizard/assets/110829506/6d97b857-6256-4670-a8c8-52cbc169d84e)
+
 
 
 
