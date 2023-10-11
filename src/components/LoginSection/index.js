@@ -1,26 +1,16 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 /* import "../SignUp/formInput.css"; */
 import "./login.scss";
 import FormInput from "../SignUp/FormInput";
 import { Link } from "react-router-dom";
 import EditInformation from "../EditInformation";
 import ChooseType from "../ChooseType";
-import Background from '../SignUp/backgroundimg.svg'
-import LoginImg from './LoginPageImg.svg'
+import Background from "../SignUp/backgroundimg.svg";
+import LoginImg from "./LoginPageImg.svg";
 import SignUp from "../SignUp";
 
-
-
-
-
-
-
-
-const Login = ({
-  setIsLoggedIn,
-  isLoggedIn
-}) => {
+const Login = ({ setIsLoggedIn, isLoggedIn }) => {
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -50,27 +40,27 @@ const Login = ({
   ];
 
   const handleLogin = () => {
-    fetch('https://s-tekin.jotform.dev/intern-api/user/login', {
-      method: 'POST',
+    fetch("https://s-tekin.jotform.dev/intern-api/user/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: values.email,
         password: values.password,
       }),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.message === "success") {
           // Başarılı giriş
           // Token'i localStorage'a kaydet
-          localStorage.setItem('user_token', data.content.user_token);
-          localStorage.setItem('userId', data.content.id);
+          localStorage.setItem("user_token", data.content.user_token);
+          localStorage.setItem("userId", data.content.id);
           setUserToken(user_token);
           setIsLoggedIn(true); // Kullanıcı oturum açtı
           console.log("Giriş başarılı. Token:");
-          console.log(data) // Token'i console'da gösterme
+          console.log(data); // Token'i console'da gösterme
           navigate("/choosetype");
         } else {
           // Başarısız giriş
@@ -78,14 +68,14 @@ const Login = ({
           console.error("Giriş başarısız");
         }
       })
-      .catch(error => {
-        console.error('Hata:', error);
+      .catch((error) => {
+        console.error("Hata:", error);
       });
   };
 
   const handleLogout = () => {
     // Kullanıcı çıkış yaparken token'i localStorage'dan kaldır
-    localStorage.removeItem('user_token');
+    localStorage.removeItem("user_token");
     setUserToken("");
     setIsLoggedIn(false); // Kullanıcı oturumu kapattı
   };
@@ -102,74 +92,59 @@ const Login = ({
 
   // Sayfa yüklendiğinde localStorage'dan token'i al
   useEffect(() => {
-    const storedToken = localStorage.getItem('user_token');
+    const storedToken = localStorage.getItem("user_token");
     if (storedToken) {
       setUserToken(storedToken);
       setIsLoggedIn(true); // Kullanıcı oturum açık
     }
   }, []);
 
-
-  
-
   return (
-    
-    
     <div className="login-panel">
-
-
-
-{isLoggedIn && (
-  
-    <div className="background">
+      {isLoggedIn && (
+        <div className="background">
           <img src={Background}></img>
         </div>
-        )}
-    
-        {isLoggedIn && (
-      
-      <div className='landing'>
-        <img src={LoginImg}></img>
-      </div>
-    )}
-  <div className='login-main'>
-    <div className="app">
-    {!isLoggedIn ? (
-        //  <div>
-        //      <button onClick={handleLogout}>logout</button>
-        //  </div>
-<ChooseType/>
-   
-      
-     
-    ) : (
-      <div className="login-section">
-      <form onSubmit={handleSubmit}>
-      <div className="head-login">
-            <h3>LOGIN</h3>
-          </div>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
+      )}
 
-        <button type="submit">Login</button>
-     
-
-        <div className="dont-have-account">
-        Don’t have an account?<Link to="/signup">Sign Up</Link>
+      {isLoggedIn && (
+        <div className="landing">
+          <img src={LoginImg}></img>
         </div>
-      </form>
+      )}
+      <div className="login-main">
+        <div className="app">
+          {!isLoggedIn ? (
+            //  <div>
+            //      <button onClick={handleLogout}>logout</button>
+            //  </div>
+            <ChooseType />
+          ) : (
+            <div className="login-section">
+              <form onSubmit={handleSubmit}>
+                <div className="head-login">
+                  <h3>LOGIN</h3>
+                </div>
+                {inputs.map((input) => (
+                  <FormInput
+                    key={input.id}
+                    {...input}
+                    value={values[input.name]}
+                    onChange={onChange}
+                  />
+                ))}
+
+                <button type="submit">Login</button>
+
+                <div className="dont-have-account">
+                  Don’t have an account?<Link to="/signup">Sign Up</Link>
+                </div>
+              </form>
+            </div>
+          )}
+        </div>
       </div>
-    )}
-  </div>
-  </div>
-  </div>
-  
+    </div>
   );
 };
 
