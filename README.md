@@ -18,16 +18,22 @@ This is a Jotform Internship Project QR Code Generator App "Code Wizard".
 ![6](https://github.com/somegm/code-wizard/assets/65120702/83bc0fe1-260c-47de-99f8-070319881942)
 
 -Edit Information-
-![7](https://github.com/somegm/code-wizard/assets/65120702/9bee2ca9-38db-42d1-a64e-d012dcef6f2c)
+![3](https://github.com/somegm/Code-Wizard/assets/65120702/98047587-4701-4dbc-8cae-da48d07d9b7a)
+
+![4](https://github.com/somegm/Code-Wizard/assets/65120702/e3ce42d5-3bfd-4cb5-9b2f-b525a3893742)
 
 -Additional Information-
 ![8](https://github.com/somegm/code-wizard/assets/65120702/736c1f75-4f88-4a42-a91e-84a12aa8fd84)
 
 -Customize-
-![9](https://github.com/somegm/code-wizard/assets/65120702/5827e4b5-9ac5-4996-a30c-5e9d5b669a4a)
+![2](https://github.com/somegm/Code-Wizard/assets/65120702/94194f74-a71b-4bbd-8271-f2e269a36c09)
 
 -QR Ready-
 ![10](https://github.com/somegm/code-wizard/assets/65120702/e4dd674d-076e-456d-98df-4d31a12396be)
+
+-Message-
+![1](https://github.com/somegm/Code-Wizard/assets/65120702/10d3df5d-125e-4734-98d8-9b1afd4a5e40)
+
 
 
 
